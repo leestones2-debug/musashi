@@ -173,6 +173,12 @@ nav.scrolled{background:rgba(15,23,42,.96);}
 .asset-frame img{width:100%;display:block;}
 .asset-frame.no-overlay::after{display:none;}
 .group-intro{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-top:40px;}
+.group-intro-visual{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--glass-bd);box-shadow:var(--shadow-lg);background:var(--surface);}
+.group-intro-visual img.main{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1);}
+.group-intro-visual:hover img.main{transform:scale(1.04);}
+.group-intro-cap{padding:20px 24px 24px;text-align:center;border-top:1px solid var(--glass-bd);background:linear-gradient(180deg,rgba(30,41,59,.6),var(--surface));}
+.group-intro-cap img{height:52px;width:auto;margin:0 auto;display:block;}
+.group-intro-cap p{font-family:'IBM Plex Mono';font-size:11px;color:var(--muted);letter-spacing:.1em;margin-top:12px;}
 @media(max-width:900px){.group-intro{grid-template-columns:1fr;}}
 .nav-links{display:flex;gap:6px;align-items:center;}
 .nav-links a{color:var(--muted);font-size:13px;padding:8px 14px;border-radius:8px;cursor:pointer;letter-spacing:0;transition:.2s;}
@@ -695,11 +701,7 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
         <a class="btn btn-band" href="https://band.us/@634nicodemus" target="_blank" rel="noopener">밴드 가입하기 →</a>
         <button class="btn btn-ghost" onclick="navGo('nigodemo')">니고데모 라인업</button>
       </div>
-    </div>
-    <div class="band-gallery">
-      <img src="assets/nigodemo/jehovah-nissi-course.jpg" alt="니고데모 JEHOVAH NISSI 드라이버" onclick="openLightbox(this.src)">
-      <img src="assets/nigodemo/jehovah-nissi-studio.jpg" alt="니고데모 드라이버 클로즈업" onclick="openLightbox(this.src)">
-      <img src="assets/irons/cps-graphene/hero.jpg" alt="634 CPS 그래핀 아이언" onclick="openLightbox(this.src)">
+      </div>
     </div>
   </div></section>
   <section class="pad"><div class="wrap reveal">
@@ -709,9 +711,12 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
       <div>
         <p style="color:var(--muted);line-height:1.85;font-size:15px;margin-bottom:16px;"><strong style="color:var(--text)">주식회사 인터네셔널무사시634</strong> (인터네셔널 무사시 634 그룹)은 일본식 단조 기법으로 프리미엄 골프클럽을 개발·생산합니다. JEHOVAH NISHI, NICODEMUS, PASSOVER 등 각 시리즈명과 제품 슬로건에는 제작 철학과 뜻이 담겨 있으며, 장인의 기술과 그 정신이 함께합니다.</p>
       </div>
-      <div style="background:var(--surface);border:1px solid var(--glass-bd);border-radius:20px;padding:40px;text-align:center;box-shadow:var(--shadow-lg);">
-        <img src="assets/musashi-logo-light.png" alt="MUSASHI 634" class="musashi-logo-img hero" width="300" height="158">
-        <p style="font-family:'IBM Plex Mono';font-size:12px;color:var(--muted);letter-spacing:.08em;margin-top:16px;">INTERNATIONAL MUSASHI 634 GROUP</p>
+      <div class="group-intro-visual">
+        <img class="main" src="assets/series-showcase.jpg" alt="무사시 634 CPS 아이언 · JEHOVAH NISSI 드라이버" onclick="openLightbox(this.src)">
+        <div class="group-intro-cap">
+          <img src="assets/musashi-logo-light.png" alt="MUSASHI 634">
+          <p>INTERNATIONAL MUSASHI 634 GROUP</p>
+        </div>
       </div>
     </div>
   </div></section>
