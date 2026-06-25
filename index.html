@@ -8,11 +8,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F8FAFC;--surface:#FFFFFF;--glass:rgba(255,255,255,.94);--glass-bd:#E2E8F0;--card-border:#E2E8F0;--navy:#1E293B;--gold:#C9A227;--gold-light:#D4AF37;--gold-dim:#A6841F;--gold-glow:rgba(201,162,39,.32);--text:#475569;--heading:#0F172A;--muted:#64748B;--green:#059669;--cyan:var(--gold);--magenta:var(--gold-light);--nav-h:68px;--accent:var(--gold);--accent2:var(--gold-light);--section-y:clamp(100px,12vw,140px);--block-gap:clamp(32px,5vw,48px);--shadow:0 4px 20px rgba(15,23,42,.06),inset 0 1px 0 rgba(255,255,255,.9);--shadow-lg:0 20px 48px rgba(15,23,42,.08),0 0 0 1px rgba(226,232,240,.85);--ease:cubic-bezier(.16,1,.3,1);}
-body.trinity-theme{--bg:#FAFBFD;--surface:#FFFFFF;--text:#475569;--heading:#0F172A;--accent:#EA580C;--accent2:#16A34A;--cyan:#EA580C;--magenta:#16A34A;}
-body.trinity-theme::before{background:radial-gradient(900px circle at 15% 10%,rgba(234,88,12,.06),transparent 55%),radial-gradient(700px circle at 85% 80%,rgba(22,163,74,.05),transparent 50%);}
-body.magnificat-theme{--bg:#FAF8F5;--surface:#FFFFFF;--accent:#C9A227;--accent2:#A6841F;--cyan:#C9A227;--magenta:#D4AF37;--text:#57534E;--heading:#1C1917;--muted:#78716C;--gold:#C9A227;--gold-light:#D4AF37;--glass-bd:#E7E5E4;}
-body.magnificat-theme::before{background:radial-gradient(900px circle at 18% 12%,rgba(212,175,55,.1),transparent 55%),radial-gradient(700px circle at 82% 78%,rgba(248,250,252,.8),transparent 50%);}
+:root{--bg:#0F172A;--surface:#1E293B;--glass:rgba(30,41,59,.94);--glass-bd:#334155;--card-border:#334155;--navy:#0F172A;--gold:#D4AF37;--gold-light:#E8C969;--gold-dim:#B8962E;--gold-glow:rgba(212,175,55,.45);--text:#F1F5F9;--heading:#F8FAFC;--muted:#94A3B8;--green:#34D399;--cyan:var(--gold);--magenta:var(--gold-light);--nav-h:68px;--accent:var(--gold);--accent2:var(--gold-light);--section-y:clamp(100px,12vw,140px);--block-gap:clamp(32px,5vw,48px);--shadow:0 4px 24px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.04);--shadow-lg:0 24px 64px rgba(0,0,0,.42),0 0 0 1px rgba(51,65,85,.55);--ease:cubic-bezier(.16,1,.3,1);}
+body.trinity-theme{--bg:#0F172A;--surface:#1A2332;--text:#F1F5F9;--heading:#F8FAFC;--accent:#EA580C;--accent2:#16A34A;--cyan:#EA580C;--magenta:#16A34A;}
+body.trinity-theme::before{background:radial-gradient(900px circle at 15% 10%,rgba(234,88,12,.08),transparent 55%),radial-gradient(700px circle at 85% 80%,rgba(22,163,74,.06),transparent 50%);}
+body.magnificat-theme{--bg:#1C1917;--surface:#292524;--accent:#D4AF37;--accent2:#B8962E;--cyan:#D4AF37;--magenta:#E8C969;--text:#F5F5F4;--heading:#FAFAF9;--muted:#A8A29E;--gold:#D4AF37;--gold-light:#E8C969;--glass-bd:#44403C;}
+body.magnificat-theme::before{background:radial-gradient(900px circle at 18% 12%,rgba(212,175,55,.07),transparent 55%),radial-gradient(700px circle at 82% 78%,rgba(15,23,42,.15),transparent 50%);}
 body.magnificat-theme .grad{background:linear-gradient(120deg,var(--gold-light),var(--gold),var(--navy));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 .nav-divider{width:1px;height:22px;background:var(--glass-bd);margin:0 4px;}
 .trinity-logo{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:700;letter-spacing:.22em;color:var(--accent);line-height:1.1;}
@@ -32,7 +32,7 @@ body.magnificat-theme .grad{background:linear-gradient(120deg,var(--gold-light),
 .mag-brochure-img:hover{border-color:rgba(212,175,55,.4);}
 .mag-brochure-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
 .mag-feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px;}
-.mag-feature-card{background:linear-gradient(145deg,rgba(212,175,55,.1),rgba(255,255,255,.95));border:1px solid rgba(212,175,55,.28);border-radius:14px;padding:24px;}
+.mag-feature-card{background:linear-gradient(145deg,rgba(212,175,55,.08),rgba(30,41,59,.4));border:1px solid rgba(212,175,55,.22);border-radius:14px;padding:24px;}
 .mag-feature-card h4{color:var(--gold-light);font-size:16px;margin-bottom:10px;}
 .mag-feature-card p{color:var(--muted);font-size:14px;line-height:1.75;}
 .mag-spec-list{list-style:none;margin-top:24px;}
@@ -43,7 +43,7 @@ body.magnificat-theme .grad{background:linear-gradient(120deg,var(--gold-light),
 .badge{display:inline-block;background:var(--gold);color:var(--navy);padding:7px 14px;border-radius:6px;font-size:11px;font-weight:700;font-family:'IBM Plex Mono';}
 .badge.soon{background:transparent;border:1px solid var(--glass-bd);color:var(--gold);}
 .flagship-card .fc-tag,.prod-table .cat,.iron-card .ic-tag,.assoc-card .en{color:var(--gold);}
-.iron-card.featured{border-color:rgba(212,175,55,.45);background:linear-gradient(145deg,rgba(255,251,235,.95),rgba(255,255,255,.98));}
+.iron-card.featured{border-color:rgba(212,175,55,.4);background:linear-gradient(145deg,rgba(212,175,55,.08),rgba(30,41,59,.95));}
 .iron-markings span{border-color:rgba(212,175,55,.32);color:var(--gold-light);}
 .iron-bullets li::before{color:var(--gold);}
 .site-toast{border-color:rgba(212,175,55,.25);}
@@ -106,8 +106,8 @@ body.magnificat-theme .grad{background:linear-gradient(120deg,var(--gold-light),
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;background:var(--bg);}
 body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;overflow-x:hidden;word-break:keep-all;line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased;min-height:100vh;}
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(900px circle at 12% 8%,rgba(212,175,55,.12),transparent 52%),radial-gradient(800px circle at 88% 92%,rgba(148,163,184,.08),transparent 50%);}
-body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.04;background-image:linear-gradient(rgba(100,116,139,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(100,116,139,.18) 1px,transparent 1px);background-size:56px 56px;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(900px circle at 12% 8%,rgba(212,175,55,.07),transparent 52%),radial-gradient(800px circle at 88% 92%,rgba(30,41,59,.35),transparent 50%);}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.06;background-image:linear-gradient(rgba(148,163,184,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.12) 1px,transparent 1px);background-size:56px 56px;}
 body:not(.trinity-theme):not(.magnificat-theme)::after{animation:grid-drift 48s linear infinite;}
 @keyframes grid-drift{to{background-position:56px 56px,56px 56px;}}
 .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px);position:relative;z-index:1;}
@@ -140,11 +140,11 @@ body.intro-lock{overflow:hidden;}
 .intro-curtain.done{visibility:hidden;pointer-events:none;}
 nav.intro-wait{transform:translateY(-110%);opacity:0;}
 nav.nav-in{transform:none;opacity:1;transition:transform .85s cubic-bezier(.16,1,.3,1),opacity .6s ease;}
-.mouse-glow{position:fixed;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.1),transparent 68%);pointer-events:none;z-index:0;opacity:0;transition:opacity .45s;filter:blur(42px);will-change:transform;}
+.mouse-glow{position:fixed;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.14),transparent 68%);pointer-events:none;z-index:0;opacity:0;transition:opacity .45s;filter:blur(42px);will-change:transform;}
 body.mouse-active .mouse-glow{opacity:1;}
 body.trinity-theme .mouse-glow,body.magnificat-theme .mouse-glow{display:none;}
-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-bd);box-shadow:0 4px 24px rgba(15,23,42,.06);}
-nav.scrolled{background:rgba(255,255,255,.98);}
+nav{position:sticky;top:0;z-index:100;background:rgba(15,23,42,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-bd);box-shadow:0 4px 24px rgba(0,0,0,.25);}
+nav.scrolled{background:rgba(15,23,42,.96);}
 .nav-inner{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
 .brand{display:flex;align-items:center;gap:14px;cursor:pointer;}
 .group-logo{display:flex;flex-direction:column;align-items:flex-start;line-height:1;}
@@ -170,11 +170,11 @@ nav.scrolled{background:rgba(255,255,255,.98);}
 nav.menu-open .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 nav.menu-open .hamburger span:nth-child(2){opacity:0;}
 nav.menu-open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.m-drawer{position:fixed;top:var(--nav-h);right:0;width:min(320px,88vw);height:calc(100vh - var(--nav-h));background:rgba(255,255,255,.98);border-left:1px solid var(--glass-bd);z-index:99;padding:20px;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column;gap:6px;box-shadow:var(--shadow-lg);}
+.m-drawer{position:fixed;top:var(--nav-h);right:0;width:min(320px,88vw);height:calc(100vh - var(--nav-h));background:rgba(15,23,42,.98);border-left:1px solid var(--glass-bd);z-index:99;padding:20px;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column;gap:6px;box-shadow:var(--shadow-lg);}
 .m-drawer.open{transform:translateX(0);}
 .m-drawer a{padding:14px 12px;border-radius:10px;color:var(--text);font-size:15px;cursor:pointer;min-height:48px;display:flex;align-items:center;}
 .m-drawer a:hover{background:rgba(212,175,55,.08);color:var(--gold);}
-.m-backdrop{position:fixed;inset:0;top:var(--nav-h);background:rgba(15,23,42,.25);z-index:98;opacity:0;visibility:hidden;transition:.3s;}
+.m-backdrop{position:fixed;inset:0;top:var(--nav-h);background:rgba(0,0,0,.55);z-index:98;opacity:0;visibility:hidden;transition:.3s;}
 .m-backdrop.open{opacity:1;visibility:visible;}
 .btn{padding:16px 32px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;border:none;display:inline-block;letter-spacing:.02em;transition:.3s;text-align:center;}
 .btn-sm{padding:10px 20px;font-size:12px;}
@@ -185,7 +185,7 @@ h3{font-family:'Sora','Noto Sans KR',sans-serif;font-weight:600;font-size:clamp(
 section.pad{padding:var(--section-y) 0;position:relative;z-index:2;}
 .hero{text-align:center;padding:clamp(108px,13vw,160px) 0 clamp(88px,10vw,120px);position:relative;overflow:hidden;}
 .hero .wrap{position:relative;z-index:2;}
-.hero-watermark{position:absolute;left:50%;top:36%;transform:translate(-50%,-50%);font-family:'Playfair Display',serif;font-size:clamp(140px,26vw,300px);font-weight:800;line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px rgba(201,162,39,.14);pointer-events:none;z-index:0;opacity:0;scale:.88;}
+.hero-watermark{position:absolute;left:50%;top:36%;transform:translate(-50%,-50%);font-family:'Playfair Display',serif;font-size:clamp(140px,26vw,300px);font-weight:800;line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px rgba(212,175,55,.07);pointer-events:none;z-index:0;opacity:0;scale:.88;}
 .hero.entered .hero-watermark{animation:wm-in 1.4s cubic-bezier(.16,1,.3,1) .2s forwards;}
 @keyframes wm-in{to{opacity:1;scale:1;}}
 .hero-burst{position:absolute;left:50%;top:42%;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;border:2px solid rgba(212,175,55,.5);pointer-events:none;z-index:1;opacity:0;scale:1;}
@@ -205,10 +205,9 @@ section.pad{padding:var(--section-y) 0;position:relative;z-index:2;}
 @keyframes gleam{0%,100%{filter:brightness(1) drop-shadow(0 0 0 transparent);}50%{filter:brightness(1.22) drop-shadow(0 0 24px rgba(212,175,55,.45));}}
 .marquee{transform:translateY(24px);opacity:0;transition:transform .9s cubic-bezier(.16,1,.3,1) .15s,opacity .9s ease .15s;}
 body.hero-ready .marquee{transform:none;opacity:1;}
-.marquee.marquee-2{border-top:none;background:rgba(248,250,252,.85);}
-.marquee.marquee-2 .track{animation-direction:reverse;animation-duration:34s;font-size:12px;opacity:.85;}
-.hero-aurora{position:absolute;inset:-20% -10% auto -10%;height:140%;z-index:0;pointer-events:none;opacity:.65;
-  background:radial-gradient(42% 52% at 18% 28%,rgba(212,175,55,.22),transparent 70%),radial-gradient(48% 55% at 82% 22%,rgba(251,191,36,.14),transparent 70%),radial-gradient(50% 48% at 55% 72%,rgba(226,232,240,.45),transparent 70%);
+.marquee.marquee-2{border-top:none;background:rgba(15,23,42,.35);}
+.hero-aurora{position:absolute;inset:-20% -10% auto -10%;height:140%;z-index:0;pointer-events:none;opacity:.5;
+  background:radial-gradient(42% 52% at 18% 28%,rgba(212,175,55,.18),transparent 70%),radial-gradient(48% 55% at 82% 22%,rgba(232,201,105,.12),transparent 70%),radial-gradient(50% 48% at 55% 72%,rgba(30,41,59,.35),transparent 70%);
   filter:blur(24px);animation:aurora 18s ease-in-out infinite;}
 @keyframes aurora{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(-3%,4%) scale(1.06);}66%{transform:translate(4%,-2%) scale(1.03);}}
 .hero-orbit{position:absolute;top:42%;right:-140px;width:640px;height:640px;transform:translateY(-50%);z-index:0;pointer-events:none;opacity:.42;}
@@ -1268,7 +1267,7 @@ const pages=['home','products','pdetail','idetail','nigodemo','magnificat','trin
 const trinityPages=['trinity','franchise'];
 const magnificatPages=['magnificat'];
 const productCats={premium:'프리미엄',iron:'아이언·세트',wedge:'웨지·스페셜',women:'우먼스',beginner:'입문·퍼터',goods:'용품·액세서리'};
-const CPS_IRON={id:'cps-graphene-7i',featured:true,name:'[비거리 전용] 634 CPS 그래핀 그라파이트 7아이언',compose:'#5 · #6 · #7 · #8 · #9 · PW · SW',loft:'24° ~ 55°',shaft:'CPS 그래핀 100% · R / SR / S',desc:'무사시 634 대표 비거리 아이언. JEHOVAH NISSI III · HYPER SPEED TECHNOLOGY 적용. 남녀공용 나노 그래핀 샤프트 7pc 세트.',price:'1,890,000',priceOrig:'2,490,000',hero:'assets/irons/cps-graphene/hero.jpg',detailImg:'assets/irons/cps-graphene/spec-banner.jpg',detailGallery:['assets/irons/cps-graphene/detail-1.jpg','assets/irons/cps-graphene/detail-2.jpg','assets/irons/cps-graphene/detail-3.jpg','assets/irons/cps-graphene/detail-4.jpg','assets/irons/cps-graphene/detail-5.jpg'],bullets:['비거리 절대 보장','인생 최고의 비거리','초경량 · 가장 쉬운 아이언'],markings:['JEHOVAH NISSI III','HYPER SPEED TECHNOLOGY','SOLI DEO GLORIA','MUSASHI 634'],features:['CPS(Nano Product System) 100% 그래핀 샤프트 — Self Control Flex','초경량 헤드 + 고탄성 샤프트로 비거리·이지 스윙','페이스 하단 이중 홈 — 볼 스피드·관용성 향상','샤프트 컬러: 오렌지 · 라임 · 실버 그라데이션','Musashi 블랙 그립 · 캐비티백 골드 포인트'],specs:[['품명','무사시 634 CPS 그래핀 그라파이트 7아이언'],['성별','남녀공용'],['구성','#5~SW 7pc 세트'],['재질','금속 + 그래핀'],['제조국','대한민국'],['출시','2025년'],['제조','무사시 634 / ㈜씨엔씨인터내셔널']],clubs:[['클럽','로프트','라이','길이','헤드중량'],['#5','24°','61°','38"','358g'],['#6','27°','61.5°','37.5"','365g'],['#7','31°','62°','37"','372g'],['#8','35°','62.5°','36.5"','379g'],['#9','40°','63°','36"','386g'],['PW','45°','63.5°','35.5"','393g'],['SW','55°','64°','35.25"','400g']],shafts:[['플렉스','중량','토크','CPM','킥포인트'],['R','48g','4.2','245','Low/Mid'],['SR','50g','4.0','255','Low/Mid'],['S','52g','3.8','265','Low/Mid']]};
+const CPS_IRON={id:'cps-graphene-7i',featured:true,name:'[비거리 전용] 634 CPS 그래핀 그라파이트 7아이언',compose:'#5 · #6 · #7 · #8 · #9 · PW · SW',loft:'24° ~ 55°',shaft:'CPS 그래핀 100% · R / SR / S',desc:'무사시 634 대표 비거리 아이언. JEHOVAH NISSI III · HYPER SPEED TECHNOLOGY 적용. 남녀공용 나노 그래핀 샤프트 7pc 세트.',price:'1,890,000',priceOrig:'2,490,000',hero:'assets/irons/cps-graphene/hero.jpg',detailImg:'assets/irons/cps-graphene/spec-banner.jpg',bullets:['비거리 절대 보장','인생 최고의 비거리','초경량 · 가장 쉬운 아이언'],markings:['JEHOVAH NISSI III','HYPER SPEED TECHNOLOGY','SOLI DEO GLORIA','MUSASHI 634'],features:['CPS(Nano Product System) 100% 그래핀 샤프트 — Self Control Flex','초경량 헤드 + 고탄성 샤프트로 비거리·이지 스윙','페이스 하단 이중 홈 — 볼 스피드·관용성 향상','샤프트 컬러: 오렌지 · 라임 · 실버 그라데이션','Musashi 블랙 그립 · 캐비티백 골드 포인트'],specs:[['품명','무사시 634 CPS 그래핀 그라파이트 7아이언'],['성별','남녀공용'],['구성','#5~SW 7pc 세트'],['재질','금속 + 그래핀'],['제조국','대한민국'],['출시','2025년'],['제조','무사시 634 / ㈜씨엔씨인터내셔널']],clubs:[['클럽','로프트','라이','길이','헤드중량'],['#5','24°','61°','38"','358g'],['#6','27°','61.5°','37.5"','365g'],['#7','31°','62°','37"','372g'],['#8','35°','62.5°','36.5"','379g'],['#9','40°','63°','36"','386g'],['PW','45°','63.5°','35.5"','393g'],['SW','55°','64°','35.25"','400g']],shafts:[['플렉스','중량','토크','CPM','킥포인트'],['R','48g','4.2','245','Low/Mid'],['SR','50g','4.0','255','Low/Mid'],['S','52g','3.8','265','Low/Mid']]};
 const products=[
   {id:'heroeszipangu',no:1,n:'HEROESZIPANGU',cat:'premium',catLabel:'프리미엄',items:'아이언 · 웨지 · 유틸리티',desc:'일본 전통 단조와 현대 기술의 플래그십 라인',origin:'일본',material:'소프트아이언 단조',target:'중·상급자 · 컬렉터',features:['전통 단조 공법 기반 프리미엄 헤드','아트워크·한정 컬렉션 컨셉','의미를 담은 시리즈 네이밍'],specs:[['제조국','일본'],['헤드','단조'],['라인','프리미엄'],['구성','시리즈별 상이 — 문의 안내']],irons:[{id:'forged-set',name:'단조 아이언 풀세트',compose:'#4~PW',loft:'#4 24° ~ PW 48°',shaft:'950S / DG · 문의',desc:'소프트아이언 단조 바디. 컬렉터·상급자용 정통 필.',features:['일본식 단조 공법','얇은 톱라인·클래식 실루엣','시리즈 아트워크 각인'],specs:[['헤드','소프트아이언 단조'],['구성','#4~PW 7pc'],['샤프트','Steel — 강도별'],['특징','프리미엄 · 한정']]},{id:'utility',name:'유틸리티 · 롱아이언',compose:'#3U · #4U',loft:'19° · 22°',shaft:'Graphite / Hybrid',desc:'아이언 세트와 매칭되는 유틸리티.',features:['아이언 라인 디자인 통일','관용성·비거리 보완'],specs:[['분류','유틸리티'],['로프트','19° · 22°'],['구성','단품·세트 연계']]}]},
   {id:'jehovah-nishi',no:2,n:'JEHOVAH NISHI',cat:'iron',catLabel:'아이언·세트',items:'CPS 그래핀 아이언 · 풀세트',desc:'「여호와는 나의 깃발」— JEHOVAH NISSI III · 비거리 특화 CPS 그래핀 아이언',origin:'대한민국',material:'캐비티백 · CPS 그래핀',target:'비거리·입문~중급 · 남녀공용',features:['JEHOVAH NISSI III · HYPER SPEED TECHNOLOGY','SOLI DEO GLORIA 호젤 각인','CPS 100% 그래핀 샤프트 — Self Control Flex','비거리 절대 보장 컨셉'],specs:[['제조국','대한민국'],['분류','CPS 그래핀 7아이언'],['구성','#5~SW 7pc'],['출시','2025년']],irons:[CPS_IRON,{id:'mid-short',name:'미드·숏 아이언 단품',compose:'#6~SW',loft:'#6 31° ~ SW 55°',shaft:'CPS 그래핀 · R/SR/S',desc:'세트 후반부 단품·보강 구성.',features:['CPS 세트 매칭 샤프트','그린 주변 안정성'],specs:[['구성','단품'],['용도','세트 보강 · 교체']]}]},
