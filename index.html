@@ -294,9 +294,14 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
 .img-clean img{object-fit:contain;background:var(--surface);}
 .iron-hero-img{background:var(--surface);}
 .band-cta-banner{background:linear-gradient(135deg,rgba(6,182,110,.08),rgba(212,175,55,.06));border:1px solid var(--card-border);}
-.series-wall-wrap{display:grid;grid-template-columns:1fr 1fr;gap:var(--block-gap);align-items:center;margin-top:40px;}
-.series-wall-photo{border-radius:16px;overflow:hidden;border:1px solid var(--glass-bd);box-shadow:var(--shadow-lg);background:var(--surface);}
-.series-wall-photo img{width:100%;display:block;}
+.series-wall-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:var(--block-gap);align-items:center;margin-top:40px;}
+.series-showcase{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--glass-bd);box-shadow:var(--shadow-lg);background:var(--surface);}
+.series-showcase img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;cursor:pointer;transition:.35s;}
+.series-showcase:hover img{transform:scale(1.03);}
+.series-showcase img{transition:transform .5s cubic-bezier(.16,1,.3,1);}
+.series-showcase-cap{position:absolute;bottom:0;left:0;right:0;padding:28px 32px;background:linear-gradient(180deg,transparent 0%,rgba(15,23,42,.55) 35%,rgba(15,23,42,.94) 100%);pointer-events:none;}
+.series-showcase-cap span{font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.28em;color:var(--gold);}
+.series-showcase-cap p{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.5;}
 .series-wall-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .series-col{list-style:none;}
 .series-col.left{text-align:right;}
@@ -370,8 +375,10 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
 .assoc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px;}
 .assoc-card{background:var(--glass);border:1px solid var(--glass-bd);border-radius:16px;overflow:hidden;transition:.3s;}
 .assoc-card:hover{border-color:rgba(212,175,55,.32);transform:translateY(-4px);}
-.assoc-visual{aspect-ratio:5/3;background:linear-gradient(180deg,#F8FAFC,#F1F5F9);border-bottom:1px solid var(--glass-bd);display:flex;align-items:center;justify-content:center;padding:20px;}
-.assoc-visual img{width:100%;max-width:280px;height:auto;display:block;border-radius:8px;}
+.assoc-visual{aspect-ratio:16/10;background:#0F172A;border-bottom:1px solid var(--glass-bd);overflow:hidden;}
+.assoc-visual img{width:100%;height:100%;object-fit:cover;display:block;max-width:none;border-radius:0;}
+.assoc-wall{border-radius:18px;overflow:hidden;border:1px solid var(--glass-bd);margin-bottom:36px;box-shadow:var(--shadow-lg);cursor:pointer;}
+.assoc-wall img{width:100%;display:block;aspect-ratio:3/2;object-fit:cover;}
 .assoc-body{padding:22px 24px 26px;}
 .assoc-card .en{font-family:'IBM Plex Mono';font-size:10px;color:var(--gold-light);letter-spacing:.12em;margin-bottom:6px;text-transform:uppercase;}
 .assoc-card h3{font-size:16px;margin-bottom:8px;line-height:1.4;}
@@ -729,17 +736,18 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
     <div class="sec-label">Associations</div>
     <h2>무사시가 설립한 <span class="grad">골프 협회</span></h2>
     <p style="color:var(--muted);max-width:620px;margin:12px 0 0;line-height:1.85;">인터네셔널 무사시 634 그룹 회장님이 설립·운영하는 한국골프산업협회(KGIA) 및 코리아프로페셔널골프 관련 단체입니다. <span style="color:var(--muted);font-size:13px;">※ 한국프로골프협회(KPGA, kpga.co.kr)와는 별개 기관입니다.</span></p>
+    <div class="assoc-wall reveal" onclick="openLightbox('assets/musashi-associations.png')"><img src="assets/musashi-associations.png" alt="무사시 설립 골프 협회 현판"></div>
     <div class="assoc-grid">
       <div class="assoc-card">
-        <div class="assoc-visual"><img src="assets/assoc/kgia.svg" alt="한국골프산업협회 KGIA"></div>
+        <div class="assoc-visual"><img src="assets/assoc/kgia.jpg" alt="한국골프산업협회 KGIA"></div>
         <div class="assoc-body"><div class="en">KGIA</div><h3>한국골프산업협회</h3><p>Korea Golf Industry Association. 국내 골프산업 발전과 회원사·관련 기업 협력.</p></div>
       </div>
       <div class="assoc-card">
-        <div class="assoc-visual"><img src="assets/assoc/kpg-assoc.svg" alt="코리아프로페셔널골프협회"></div>
+        <div class="assoc-visual"><img src="assets/assoc/kpg-assoc.jpg" alt="코리아프로페셔널골프협회"></div>
         <div class="assoc-body"><div class="en">KPG Association</div><h3>공익법인 (사) 코리아프로페셔널골프협회</h3><p>2024년 8월 출범 · 2025년 공익법인. 엄재용 이사장. 골프 대중화·문화관광·인식개선.</p></div>
       </div>
       <div class="assoc-card">
-        <div class="assoc-visual"><img src="assets/assoc/gpg-corp.svg" alt="주식회사 코리아프로페셔널골프"></div>
+        <div class="assoc-visual"><img src="assets/assoc/gpg-corp.jpg" alt="주식회사 코리아프로페셔널골프"></div>
         <div class="assoc-body"><div class="en">GPG</div><h3>주식회사 코리아프로페셔널골프</h3><p>Korea Professional Golf. 골프장·교육·운영 사업. 사회공헌·대회 후원 참여.</p></div>
       </div>
     </div>
@@ -901,6 +909,10 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
     <div class="sec-label">Musashi Golf Clubs</div>
     <h2>무사시골프채 <span class="grad">10시리즈</span></h2>
     <p style="color:var(--muted);margin-top:12px;max-width:620px;line-height:1.75;">일본 제조 10개 브랜드 · 대표 제품 CPS 그래핀 7아이언</p>
+    <div class="series-showcase reveal" style="margin-top:32px;margin-bottom:8px;">
+      <img src="assets/series-showcase.jpg" alt="무사시 10시리즈" onclick="openLightbox(this.src)">
+      <div class="series-showcase-cap"><span>10 SERIES · JAPAN FORGED</span><p>CPS 그래핀 7아이언 · JEHOVAH NISSI · NICODEMUS · PASSOVER</p></div>
+    </div>
     <div class="product-cards reveal" id="productCards"></div>
     <div class="filter-row">
       <button onclick="filterProducts('all')" class="filter-btn btn btn-primary btn-sm">전체</button>
@@ -1280,9 +1292,10 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
     <div class="sec-label">634 Group · Associations</div>
     <h1>무사시 <span class="grad">골프 협회</span></h1>
     <p style="color:var(--muted);max-width:620px;margin-top:16px;line-height:1.85;">회장님이 무사시 그룹에서 설립한 협회·법인입니다. 골프산업 발전, 대중화, 사회공헌 대회까지 한국 골프 생태계를 이끕니다. <span style="font-size:13px;">※ 1968년 설립 한국프로골프협회(KPGA)와는 별개 기관입니다.</span></p>
+    <div class="assoc-wall reveal" onclick="openLightbox('assets/musashi-associations.png')"><img src="assets/musashi-associations.png" alt="무사시 설립 골프 협회 현판"></div>
     <div class="assoc-grid reveal">
       <div class="assoc-card">
-        <div class="assoc-visual"><img src="assets/assoc/kgia.svg" alt="한국골프산업협회 KGIA"></div>
+        <div class="assoc-visual"><img src="assets/assoc/kgia.jpg" alt="한국골프산업협회 KGIA"></div>
         <div class="assoc-body">
           <div class="en">KGIA</div>
           <h3>한국골프산업협회</h3>
@@ -1291,7 +1304,7 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
         </div>
       </div>
       <div class="assoc-card">
-        <div class="assoc-visual"><img src="assets/assoc/kpg-assoc.svg" alt="코리아프로페셔널골프협회"></div>
+        <div class="assoc-visual"><img src="assets/assoc/kpg-assoc.jpg" alt="코리아프로페셔널골프협회"></div>
         <div class="assoc-body">
           <div class="en">KPG</div>
           <h3>공익법인 (사) 코리아프로페셔널골프협회</h3>
@@ -1302,7 +1315,7 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
         </div>
       </div>
       <div class="assoc-card">
-        <div class="assoc-visual"><img src="assets/assoc/gpg-corp.svg" alt="주식회사 코리아프로페셔널골프"></div>
+        <div class="assoc-visual"><img src="assets/assoc/gpg-corp.jpg" alt="주식회사 코리아프로페셔널골프"></div>
         <div class="assoc-body">
           <div class="en">GPG</div>
           <h3>주식회사 코리아프로페셔널골프</h3>
@@ -1455,7 +1468,7 @@ function renderSeriesWall(){
   const el=document.getElementById('homeSeriesWall');
   if(!el)return;
   const left=products.slice(0,5),right=products.slice(5,10);
-  el.innerHTML=`<div class="series-wall-photo"><img src="assets/musashi-products-wall.png" alt="무사시 10시리즈 벽면"></div><div class="series-wall-cols"><ul class="series-col left">${left.map(p=>`<li onclick="navGoProduct('${p.id}')">${p.n}</li>`).join('')}</ul><ul class="series-col right">${right.map(p=>`<li onclick="navGoProduct('${p.id}')">${p.n}</li>`).join('')}</ul></div>`;
+  el.innerHTML=`<div class="series-showcase"><img src="assets/series-showcase.jpg" alt="무사시 10시리즈 CPS 아이언 · JEHOVAH NISSI 드라이버" onclick="openLightbox(this.src)"><div class="series-showcase-cap"><span>10 SERIES · JAPAN FORGED</span><p>CPS 그래핀 7아이언 · JEHOVAH NISSI 드라이버 · 프리미엄 라인업</p></div></div><div class="series-wall-cols"><ul class="series-col left">${left.map(p=>`<li onclick="navGoProduct('${p.id}')">${p.n}</li>`).join('')}</ul><ul class="series-col right">${right.map(p=>`<li onclick="navGoProduct('${p.id}')">${p.n}</li>`).join('')}</ul></div>`;
 }
 const FLAGSHIP=[
   {tag:'IRON · FLAGSHIP',title:'634 CPS 그래핀 7아이언',desc:'비거리 전용 · JEHOVAH NISSI III · #5~SW',img:'assets/irons/cps-graphene/hero.jpg',onclick:"navGoIron('musashi-634','cps-graphene-7i')"},
