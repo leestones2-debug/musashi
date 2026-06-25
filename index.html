@@ -115,7 +115,11 @@ body.magnificat-theme .grad{background:linear-gradient(120deg,var(--gold-light),
 .prod-cat-block ul{list-style:none;}
 .prod-cat-block li{padding:10px 0;border-top:1px solid var(--glass-bd);font-size:14px;}
 .prod-cat-block li strong{display:block;font-size:15px;margin-bottom:3px;}
-.prod-cat-block li span{color:var(--muted);font-size:12px;}
+.prod-cat-block li{cursor:pointer;transition:.2s;}
+.prod-cat-block li:hover{color:var(--gold);}
+.series-col li .series-cat{display:block;font-family:'IBM Plex Mono';font-size:9px;color:var(--gold);letter-spacing:.08em;margin-bottom:4px;font-weight:500;}
+.products-note{margin-top:16px;padding:14px 18px;border-radius:12px;border:1px solid var(--glass-bd);background:rgba(212,175,55,.05);font-size:13px;color:var(--muted);line-height:1.75;}
+.products-note a{color:var(--gold);cursor:pointer;}
 @media(max-width:900px){.prod-cat-grid{grid-template-columns:1fr;}.nav-divider{display:none;}}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;background:var(--bg);}
@@ -687,7 +691,7 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
   <section class="pad" style="padding-top:0;"><div class="wrap reveal">
     <div class="sec-label">Flagship</div>
     <h2>대표 <span class="grad">제품</span></h2>
-    <p style="color:var(--muted);margin-top:12px;line-height:1.75;">무사시 634 그룹 대표 라인 — CPS 아이언 · 니고데모 · Magnificat</p>
+    <p style="color:var(--muted);margin-top:12px;line-height:1.75;">무사시 634 그룹 대표 골프클럽 — CPS 아이언 · 니고데모 드라이버 · NICODEMUS</p>
     <div class="flagship-grid" id="homeFlagship"></div>
   </div></section>
   <section class="pad" style="padding-top:0;"><div class="wrap reveal">
@@ -930,21 +934,26 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
   <section class="pad"><div class="wrap">
     <div class="sec-label">Musashi Golf Clubs</div>
     <h2>무사시골프채 <span class="grad">10시리즈</span></h2>
-    <p style="color:var(--muted);margin-top:12px;max-width:620px;line-height:1.75;">일본 제조 10개 브랜드 · 대표 제품 CPS 그래핀 7아이언</p>
+    <p style="color:var(--muted);margin-top:12px;max-width:680px;line-height:1.75;">일본 제조 <strong style="color:var(--text)">골프클럽 10시리즈</strong> · 클럽 종류별로 구분 · Magnificat 골프화는 별도 브랜드</p>
     <div class="series-showcase reveal" style="margin-top:32px;margin-bottom:8px;">
       <img src="assets/series-showcase.jpg" alt="무사시 10시리즈" onclick="openLightbox(this.src)">
       <div class="series-showcase-cap"><span>10 SERIES · JAPAN FORGED</span><p>CPS 그래핀 7아이언 · JEHOVAH NISSI · NICODEMUS · PASSOVER</p></div>
     </div>
-    <div class="product-cards reveal" id="productCards"></div>
-    <div class="filter-row">
-      <button onclick="filterProducts('all')" class="filter-btn btn btn-primary btn-sm">전체</button>
-      <button onclick="filterProducts('premium')" class="filter-btn btn btn-ghost btn-sm">프리미엄</button>
-      <button onclick="filterProducts('iron')" class="filter-btn btn btn-ghost btn-sm">아이언·세트</button>
-      <button onclick="filterProducts('wedge')" class="filter-btn btn btn-ghost btn-sm">웨지·스페셜</button>
-      <button onclick="filterProducts('women')" class="filter-btn btn btn-ghost btn-sm">우먼스</button>
-      <button onclick="filterProducts('beginner')" class="filter-btn btn btn-ghost btn-sm">입문·퍼터</button>
-      <button onclick="filterProducts('goods')" class="filter-btn btn btn-ghost btn-sm">용품·액세서리</button>
+    <div class="filter-row reveal" style="margin-top:28px;">
+      <button onclick="filterProducts('all')" class="filter-btn btn btn-primary btn-sm" data-cat="all">전체 10</button>
+      <button onclick="filterProducts('flagship')" class="filter-btn btn btn-ghost btn-sm" data-cat="flagship">플래그십</button>
+      <button onclick="filterProducts('driver')" class="filter-btn btn btn-ghost btn-sm" data-cat="driver">드라이버</button>
+      <button onclick="filterProducts('iron')" class="filter-btn btn btn-ghost btn-sm" data-cat="iron">아이언·세트</button>
+      <button onclick="filterProducts('putter')" class="filter-btn btn btn-ghost btn-sm" data-cat="putter">퍼터·입문</button>
+      <button onclick="filterProducts('women')" class="filter-btn btn btn-ghost btn-sm" data-cat="women">우먼스</button>
+      <button onclick="filterProducts('forged')" class="filter-btn btn btn-ghost btn-sm" data-cat="forged">단조·프리미엄</button>
+      <button onclick="filterProducts('limited')" class="filter-btn btn btn-ghost btn-sm" data-cat="limited">한정·에디션</button>
+      <button onclick="filterProducts('collector')" class="filter-btn btn btn-ghost btn-sm" data-cat="collector">수집·마스터</button>
+      <button onclick="filterProducts('goods')" class="filter-btn btn btn-ghost btn-sm" data-cat="goods">용품</button>
     </div>
+    <div class="prod-cat-grid reveal" id="productCategoryGroups"></div>
+    <div class="product-cards reveal" id="productCards"></div>
+    <p class="products-note reveal">※ <strong style="color:var(--text)">Magnificat</strong> 명품 골프화는 무사시골프채 10시리즈와 별개 브랜드입니다. → <a onclick="navGo('magnificat')">Magnificat 페이지</a></p>
     <div class="table-scroll reveal">
     <table class="prod-table" id="productsTable">
       <thead><tr><th>No</th><th>브랜드</th><th>분류</th><th>제품군</th><th>설명</th></tr></thead>
@@ -1406,19 +1415,20 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
 const pages=['home','products','pdetail','idetail','nigodemo','magnificat','trinity','franchise','partners'];
 const trinityPages=['trinity','franchise'];
 const magnificatPages=['magnificat'];
-const productCats={premium:'프리미엄',iron:'아이언·세트',wedge:'웨지·스페셜',women:'우먼스',beginner:'입문·퍼터',goods:'용품·액세서리'};
+const productCats={flagship:'그룹 플래그십',driver:'드라이버·니고데모',iron:'아이언·세트',putter:'퍼터·입문',women:'우먼스',forged:'단조·프리미엄',limited:'한정·에디션',collector:'수집·마스터피스',goods:'용품·액세서리'};
+const catOrder=['flagship','driver','iron','putter','women','forged','limited','collector','goods'];
 const CPS_IRON={id:'cps-graphene-7i',featured:true,name:'[비거리 전용] 634 CPS 그래핀 그라파이트 7아이언',compose:'#5 · #6 · #7 · #8 · #9 · PW · SW',loft:'24° ~ 55°',shaft:'CPS 그래핀 100% · R / SR / S',desc:'무사시 634 대표 비거리 아이언. JEHOVAH NISSI III · HYPER SPEED TECHNOLOGY 적용. 남녀공용 나노 그래핀 샤프트 7pc 세트.',price:'1,890,000',priceOrig:'2,490,000',hero:'assets/irons/cps-graphene/hero.jpg',detailImg:'assets/irons/cps-graphene/spec-banner.jpg',bullets:['비거리 절대 보장','인생 최고의 비거리','초경량 · 가장 쉬운 아이언'],markings:['JEHOVAH NISSI III','HYPER SPEED TECHNOLOGY','SOLI DEO GLORIA','MUSASHI 634'],features:['CPS(Nano Product System) 100% 그래핀 샤프트 — Self Control Flex','초경량 헤드 + 고탄성 샤프트로 비거리·이지 스윙','페이스 하단 이중 홈 — 볼 스피드·관용성 향상','샤프트 컬러: 오렌지 · 라임 · 실버 그라데이션','Musashi 블랙 그립 · 캐비티백 골드 포인트'],specs:[['품명','무사시 634 CPS 그래핀 그라파이트 7아이언'],['성별','남녀공용'],['구성','#5~SW 7pc 세트'],['재질','금속 + 그래핀'],['제조국','대한민국'],['출시','2025년'],['제조','무사시 634 / ㈜씨엔씨인터내셔널']],clubs:[['클럽','로프트','라이','길이','헤드중량'],['#5','24°','61°','38"','358g'],['#6','27°','61.5°','37.5"','365g'],['#7','31°','62°','37"','372g'],['#8','35°','62.5°','36.5"','379g'],['#9','40°','63°','36"','386g'],['PW','45°','63.5°','35.5"','393g'],['SW','55°','64°','35.25"','400g']],shafts:[['플렉스','중량','토크','CPM','킥포인트'],['R','48g','4.2','245','Low/Mid'],['SR','50g','4.0','255','Low/Mid'],['S','52g','3.8','265','Low/Mid']]};
 const products=[
-  {id:'heroeszipangu',no:1,n:'HEROESZIPANGU',cat:'premium',catLabel:'프리미엄',items:'아이언 · 웨지 · 유틸리티',desc:'일본 전통 단조와 현대 기술의 플래그십 라인',origin:'일본',material:'소프트아이언 단조',target:'중·상급자 · 컬렉터',features:['전통 단조 공법 기반 프리미엄 헤드','아트워크·한정 컬렉션 컨셉','의미를 담은 시리즈 네이밍'],specs:[['제조국','일본'],['헤드','단조'],['라인','프리미엄'],['구성','시리즈별 상이 — 문의 안내']],irons:[{id:'forged-set',name:'단조 아이언 풀세트',compose:'#4~PW',loft:'#4 24° ~ PW 48°',shaft:'950S / DG · 문의',desc:'소프트아이언 단조 바디. 컬렉터·상급자용 정통 필.',features:['일본식 단조 공법','얇은 톱라인·클래식 실루엣','시리즈 아트워크 각인'],specs:[['헤드','소프트아이언 단조'],['구성','#4~PW 7pc'],['샤프트','Steel — 강도별'],['특징','프리미엄 · 한정']]},{id:'utility',name:'유틸리티 · 롱아이언',compose:'#3U · #4U',loft:'19° · 22°',shaft:'Graphite / Hybrid',desc:'아이언 세트와 매칭되는 유틸리티.',features:['아이언 라인 디자인 통일','관용성·비거리 보완'],specs:[['분류','유틸리티'],['로프트','19° · 22°'],['구성','단품·세트 연계']]}]},
-  {id:'jehovah-nishi',no:2,n:'JEHOVAH NISHI',cat:'iron',catLabel:'아이언·세트',items:'CPS 그래핀 아이언 · 풀세트',desc:'「여호와는 나의 깃발」— JEHOVAH NISSI III · 비거리 특화 CPS 그래핀 아이언',origin:'대한민국',material:'캐비티백 · CPS 그래핀',target:'비거리·입문~중급 · 남녀공용',features:['JEHOVAH NISSI III · HYPER SPEED TECHNOLOGY','SOLI DEO GLORIA 호젤 각인','CPS 100% 그래핀 샤프트 — Self Control Flex','비거리 절대 보장 컨셉'],specs:[['제조국','대한민국'],['분류','CPS 그래핀 7아이언'],['구성','#5~SW 7pc'],['출시','2025년']],irons:[CPS_IRON,{id:'mid-short',name:'미드·숏 아이언 단품',compose:'#6~SW',loft:'#6 31° ~ SW 55°',shaft:'CPS 그래핀 · R/SR/S',desc:'세트 후반부 단품·보강 구성.',features:['CPS 세트 매칭 샤프트','그린 주변 안정성'],specs:[['구성','단품'],['용도','세트 보강 · 교체']]}]},
-  {id:'carbite',no:3,n:'CARBITE',cat:'iron',catLabel:'아이언·세트',items:'아이언 · 하이브리드',desc:'탄소·경량 소재 적용, 비거리와 관용성 균형',origin:'일본',material:'경량 소재 · 카본 요소',target:'비거리·관용성 동시 추구',features:['경량화 설계로 헤드 스피드 보조','탄소 계열 소재로 무게 배분 최적화','아이언·하이브리드 복합 라인'],specs:[['제조국','일본'],['분류','아이언·하이브리드'],['특징','경량·고반발'],['구성','시리즈별 — 문의']],irons:[{id:'iron-set',name:'CARBITE 아이언 세트',compose:'#5~PW',loft:'#5 26° ~ PW 46°',shaft:'Light Steel / Graphite',desc:'경량·고반발 아이언. 헤드 스피드 보조.',features:['카본 요소 경량화','넓은 관용성','비거리·탄도 균형'],specs:[['구성','#5~PW'],['특징','경량·고반발'],['샤프트','Light Steel / Graphite']]},{id:'hybrid',name:'CARBITE 하이브리드',compose:'#3H · #4H · #5H',loft:'19° · 22° · 25°',shaft:'Graphite R / SR',desc:'아이언 대체·롱아이언 보완.',features:['아이언 세트와 무게감 매칭','높은 관용성'],specs:[['분류','하이브리드'],['로프트','19°~25°'],['구성','단품·세트']]}]},
-  {id:'woss',no:4,n:'WOSS',cat:'women',catLabel:'우먼스',items:'우먼스 풀세트',desc:'여성 체형·스윙에 맞춘 전용 설계',origin:'일본',material:'여성용 경량 샤프트 호환',target:'여성 골퍼 · L/Lite 플렉스',features:['여성 스윙 스피드에 맞춘 무게·길이','초고반발 드라이버·아이언 구성','풀세트 원스톱 구성'],specs:[['제조국','일본'],['분류','우먼스'],['플렉스','L / Lite'],['구성','드라이버~퍼터 풀세트 — 문의']],irons:[{id:'women-set',name:'우먼스 아이언 세트',compose:'#7~SW',loft:'#7 34° ~ SW 56°',shaft:'Lite · L · 여성용 Graphite',desc:'여성 스윙에 맞춘 경량·짧은 길이 아이언.',features:['가벼운 헤드·샤프트','높은 런치·캐리','풀세트 연계'],specs:[['구성','#7~SW'],['플렉스','L / Lite'],['타깃','여성 · 시니어']]}]},
-  {id:'mla',no:5,n:'MLA',cat:'beginner',catLabel:'입문·퍼터',items:'퍼터 · 입문 세트',desc:'입문자·시니어를 위한 쉬운 조작과 퍼팅 라인',origin:'일본',material:'스테인리스 · 말렛/블레이드',target:'입문자 · 퍼팅 특화',features:['말렛·블레이드 퍼터 라인','안정적 롤과 에이밍 보조','입문 세트 연계 구성'],specs:[['분류','퍼터 · 입문'],['길이','33~34인치'],['헤드','말렛 / 블레이드'],['구성','단품·세트 — 문의']]},
-  {id:'musashi-634',no:6,n:'MUSASHI 634',cat:'premium',catLabel:'프리미엄',items:'CPS 아이언 · 니고데모 드라이버 · 웨지',desc:'그룹 대표 플래그십. CPS 그래핀 비거리 아이언 · 니고데모 드라이버',origin:'일본/한국',material:'CPS 그래핀 · 니고데모',target:'프로·상급·입문',band:true,features:['CPS 그래핀 7아이언 — 비거리 전용','니고데모 드라이버 · 니고데모2 9°·10°','634 블랙/골드 니고데모 웨지 · 연철 퍼터'],specs:[['제조국','일본 / 대한민국'],['아이언','CPS 그래핀 7pc'],['드라이버','10.5° / 9°·10°'],['샤프트','R · SR · S — 문의']],irons:[CPS_IRON,{id:'nigo-iron',name:'634 니고데모 아이언',compose:'#5~PW · 단품',loft:'#5 28° ~ PW 46°',shaft:'950S / 125S',desc:'니고데모 단조·포지드 아이언. 드라이버·웨지 세트 매칭.',features:['니고데모(Nigo Demo) 공법','634 블랙/골드','단품·풀세트'],specs:[['공법','니고데모 단조'],['구성','#5~PW · 단품'],['샤프트','950S / 125S']]}]},
-  {id:'nicodemus',no:7,n:'NICODEMUS',cat:'wedge',catLabel:'웨지·스페셜',items:'니고데모 드라이버 · 웨지 · 아이언',desc:'634 NICODEMUS — 비거리·방향성을 위한 니고데모(Nigo Demo) 대표 라인',origin:'일본',material:'니고데모 단조',target:'드라이버·숏게임 플레이어',band:true,features:['공식 밴드 대표 모델 — 니고데모 드라이버','NICODEMUS 단조 웨지 48~60°','FST125 웨지 전용 샤프트','니고데모2 초고반발 · 골드/블루 헤드'],specs:[['제조국','일본'],['드라이버 로프트','10.5° / 9°·10° (니고데모2)'],['웨지 각도','48°~60°'],['샤프트','FST125 · 125S 등 — 문의']],irons:[{id:'nigo-set',name:'NICODEMUS 니고데모 아이언',compose:'#5~PW · 단품',loft:'#5 27° ~ PW 45°',shaft:'FST125 · Steel S',desc:'드라이버·웨지와 같은 니고데모 라인 아이언.',features:['니고데모 단조 헤드','드라이버·웨지 세트 매칭','단품 5번~S 중 선택 가능'],specs:[['브랜드','634 NICODEMUS'],['구성','단품 · 세트'],['샤프트','FST125 / Steel'],['연계','니고데모 풀세트']]}]},
-  {id:'secretariat',no:8,n:'SECRETARIAT',cat:'goods',catLabel:'용품·액세서리',items:'캐디백 · 헤드커버 · 파우치',desc:'프리미엄 골프 백·액세서리 라인',origin:'일본',material:'합성가죽 · 나일론',target:'전 연령 · 용품 구매',features:['캐디백 · 스탠드백 라인','헤드커버 · 볼 파우치','634 브랜드 아이덴티티 디자인'],specs:[['분류','용품·액세서리'],['품목','백 · 커버 · 파우치'],['색상','블랙 · 골드 등 — 문의'],['구성','단품·세트']]},
-  {id:'passover',no:9,n:'PASSOVER',cat:'wedge',catLabel:'웨지·스페셜',items:'시즌 한정 · 기념 모델',desc:'뜻을 담은 시즌·기념 한정 에디션',origin:'일본',material:'한정 생산',target:'수집·기념 구매',features:['시즌별 한정 색상·스펙','기념·의미를 담은 에디션','소량 생산 컬렉션'],specs:[['분류','한정 · 시즌'],['생산','소량'],['구성','모델별 상이'],['문의','재고·입고 일정 안내']]},
-  {id:'benkei',no:10,n:'BENKEI',cat:'premium',catLabel:'프리미엄',items:'한정 · 수집형',desc:'마스터피스·수집가용 한정 시리즈',origin:'일본',material:'수제 단조',target:'수집가 · 하이엔드',features:['초한정 생산 마스터피스 라인','수집가·애호가 대상','634 프리미엄 최상위 티어'],specs:[['분류','수집·한정'],['생산','초한정'],['구성','세트·단품 — 문의'],['가격','별도 문의']],irons:[{id:'master',name:'BENKEI 마스터피스 아이언',compose:'한정 세트',loft:'시리즈별 상이',shaft:'수제 맞춤 · 문의',desc:'초한정 수제 단조 아이언. 수집가용.',features:['수제 단조 · 초한정','634 최상위 티어','컬렉션'],specs:[['생산','초한정'],['구성','세트·단품'],['가격','별도 문의']]}]}
+  {id:'heroeszipangu',no:1,n:'HEROESZIPANGU',cat:'forged',catLabel:'단조·프리미엄',items:'단조 아이언 · 웨지 · 유틸리티',desc:'일본 전통 단조와 현대 기술의 플래그십 라인',origin:'일본',material:'소프트아이언 단조',target:'중·상급자 · 컬렉터',features:['전통 단조 공법 기반 프리미엄 헤드','아트워크·한정 컬렉션 컨셉','의미를 담은 시리즈 네이밍'],specs:[['제조국','일본'],['헤드','단조'],['라인','프리미엄'],['구성','시리즈별 상이 — 문의 안내']],irons:[{id:'forged-set',name:'단조 아이언 풀세트',compose:'#4~PW',loft:'#4 24° ~ PW 48°',shaft:'950S / DG · 문의',desc:'소프트아이언 단조 바디. 컬렉터·상급자용 정통 필.',features:['일본식 단조 공법','얇은 톱라인·클래식 실루엣','시리즈 아트워크 각인'],specs:[['헤드','소프트아이언 단조'],['구성','#4~PW 7pc'],['샤프트','Steel — 강도별'],['특징','프리미엄 · 한정']]},{id:'utility',name:'유틸리티 · 롱아이언',compose:'#3U · #4U',loft:'19° · 22°',shaft:'Graphite / Hybrid',desc:'아이언 세트와 매칭되는 유틸리티.',features:['아이언 라인 디자인 통일','관용성·비거리 보완'],specs:[['분류','유틸리티'],['로프트','19° · 22°'],['구성','단품·세트 연계']]}]},
+  {id:'jehovah-nishi',no:2,n:'JEHOVAH NISHI',cat:'iron',catLabel:'아이언·세트',items:'CPS 그래핀 7아이언 · 풀세트',desc:'「여호와는 나의 깃발」— JEHOVAH NISSI III · 비거리 특화 CPS 그래핀 아이언',origin:'대한민국',material:'캐비티백 · CPS 그래핀',target:'비거리·입문~중급 · 남녀공용',features:['JEHOVAH NISSI III · HYPER SPEED TECHNOLOGY','SOLI DEO GLORIA 호젤 각인','CPS 100% 그래핀 샤프트 — Self Control Flex','비거리 절대 보장 컨셉'],specs:[['제조국','대한민국'],['분류','CPS 그래핀 7아이언'],['구성','#5~SW 7pc'],['출시','2025년']],irons:[CPS_IRON,{id:'mid-short',name:'미드·숏 아이언 단품',compose:'#6~SW',loft:'#6 31° ~ SW 55°',shaft:'CPS 그래핀 · R/SR/S',desc:'세트 후반부 단품·보강 구성.',features:['CPS 세트 매칭 샤프트','그린 주변 안정성'],specs:[['구성','단품'],['용도','세트 보강 · 교체']]}]},
+  {id:'carbite',no:3,n:'CARBITE',cat:'iron',catLabel:'아이언·세트',items:'경량 아이언 · 하이브리드',desc:'탄소·경량 소재 적용, 비거리와 관용성 균형',origin:'일본',material:'경량 소재 · 카본 요소',target:'비거리·관용성 동시 추구',features:['경량화 설계로 헤드 스피드 보조','탄소 계열 소재로 무게 배분 최적화','아이언·하이브리드 복합 라인'],specs:[['제조국','일본'],['분류','아이언·하이브리드'],['특징','경량·고반발'],['구성','시리즈별 — 문의']],irons:[{id:'iron-set',name:'CARBITE 아이언 세트',compose:'#5~PW',loft:'#5 26° ~ PW 46°',shaft:'Light Steel / Graphite',desc:'경량·고반발 아이언. 헤드 스피드 보조.',features:['카본 요소 경량화','넓은 관용성','비거리·탄도 균형'],specs:[['구성','#5~PW'],['특징','경량·고반발'],['샤프트','Light Steel / Graphite']]},{id:'hybrid',name:'CARBITE 하이브리드',compose:'#3H · #4H · #5H',loft:'19° · 22° · 25°',shaft:'Graphite R / SR',desc:'아이언 대체·롱아이언 보완.',features:['아이언 세트와 무게감 매칭','높은 관용성'],specs:[['분류','하이브리드'],['로프트','19°~25°'],['구성','단품·세트']]}]},
+  {id:'woss',no:4,n:'WOSS',cat:'women',catLabel:'우먼스',items:'여성용 드라이버 · 아이언 풀세트',desc:'여성 체형·스윙에 맞춘 전용 설계',origin:'일본',material:'여성용 경량 샤프트',target:'여성 골퍼 · L/Lite 플렉스',features:['여성 스윙 스피드에 맞춘 무게·길이','초고반발 드라이버·아이언 구성','풀세트 원스톱 구성'],specs:[['제조국','일본'],['분류','우먼스'],['플렉스','L / Lite'],['구성','드라이버~퍼터 풀세트 — 문의']],irons:[{id:'women-set',name:'우먼스 아이언 세트',compose:'#7~SW',loft:'#7 34° ~ SW 56°',shaft:'Lite · L · 여성용 Graphite',desc:'여성 스윙에 맞춘 경량·짧은 길이 아이언.',features:['가벼운 헤드·샤프트','높은 런치·캐리','풀세트 연계'],specs:[['구성','#7~SW'],['플렉스','L / Lite'],['타깃','여성 · 시니어']]}]},
+  {id:'mla',no:5,n:'MLA',cat:'putter',catLabel:'퍼터·입문',items:'퍼터 · 입문 세트',desc:'입문자·시니어를 위한 쉬운 조작과 퍼팅 라인',origin:'일본',material:'스테인리스 · 말렛/블레이드',target:'입문자 · 퍼팅 특화',features:['말렛·블레이드 퍼터 라인','안정적 롤과 에이밍 보조','입문 세트 연계 구성'],specs:[['분류','퍼터 · 입문'],['길이','33~34인치'],['헤드','말렛 / 블레이드'],['구성','단품·세트 — 문의']]},
+  {id:'musashi-634',no:6,n:'MUSASHI 634',cat:'flagship',catLabel:'그룹 플래그십',items:'CPS 아이언 · 니고데모 드라이버 · 웨지',desc:'634 그룹 대표 브랜드. CPS 그래핀 비거리 아이언 · 니고데모 드라이버 · 웨지',origin:'일본/한국',material:'CPS 그래핀 · 니고데모',target:'프로·상급·입문',band:true,features:['CPS 그래핀 7아이언 — 비거리 전용','니고데모 드라이버 · 니고데모2 9°·10°','634 블랙/골드 니고데모 웨지 · 연철 퍼터'],specs:[['제조국','일본 / 대한민국'],['아이언','CPS 그래핀 7pc'],['드라이버','10.5° / 9°·10°'],['샤프트','R · SR · S — 문의']],irons:[CPS_IRON,{id:'nigo-iron',name:'634 니고데모 아이언',compose:'#5~PW · 단품',loft:'#5 28° ~ PW 46°',shaft:'950S / 125S',desc:'니고데모 단조·포지드 아이언. 드라이버·웨지 세트 매칭.',features:['니고데모(Nigo Demo) 공법','634 블랙/골드','단품·풀세트'],specs:[['공법','니고데모 단조'],['구성','#5~PW · 단품'],['샤프트','950S / 125S']]}]},
+  {id:'nicodemus',no:7,n:'NICODEMUS',cat:'driver',catLabel:'드라이버·니고데모',items:'니고데모 드라이버 · 웨지 · 아이언',desc:'634 NICODEMUS — 비거리·방향성 니고데모(Nigo Demo) 드라이버 대표 라인',origin:'일본',material:'니고데모 단조',target:'드라이버·숏게임 플레이어',band:true,features:['공식 밴드 대표 — 니고데모 드라이버','NICODEMUS 단조 웨지 48~60°','FST125 웨지 전용 샤프트','니고데모2 초고반발 · 골드/블루 헤드'],specs:[['제조국','일본'],['드라이버 로프트','10.5° / 9°·10° (니고데모2)'],['웨지 각도','48°~60°'],['샤프트','FST125 · 125S 등 — 문의']],irons:[{id:'nigo-set',name:'NICODEMUS 니고데모 아이언',compose:'#5~PW · 단품',loft:'#5 27° ~ PW 45°',shaft:'FST125 · Steel S',desc:'드라이버·웨지와 같은 니고데모 라인 아이언.',features:['니고데모 단조 헤드','드라이버·웨지 세트 매칭','단품 5번~S 중 선택 가능'],specs:[['브랜드','634 NICODEMUS'],['구성','단품 · 세트'],['샤프트','FST125 / Steel'],['연계','니고데모 풀세트']]}]},
+  {id:'secretariat',no:8,n:'SECRETARIAT',cat:'goods',catLabel:'용품·액세서리',items:'캐디백 · 헤드커버 · 파우치',desc:'프리미엄 골프 백·액세서리 라인 (클럽 아님)',origin:'일본',material:'합성가죽 · 나일론',target:'전 연령 · 용품 구매',features:['캐디백 · 스탠드백 라인','헤드커버 · 볼 파우치','634 브랜드 아이덴티티 디자인'],specs:[['분류','용품·액세서리'],['품목','백 · 커버 · 파우치'],['색상','블랙 · 골드 등 — 문의'],['구성','단품·세트']]},
+  {id:'passover',no:9,n:'PASSOVER',cat:'limited',catLabel:'한정·에디션',items:'시즌 한정 · 기념 모델',desc:'뜻을 담은 시즌·기념 한정 에디션 클럽',origin:'일본',material:'한정 생산',target:'수집·기념 구매',features:['시즌별 한정 색상·스펙','기념·의미를 담은 에디션','소량 생산 컬렉션'],specs:[['분류','한정 · 시즌'],['생산','소량'],['구성','모델별 상이'],['문의','재고·입고 일정 안내']]},
+  {id:'benkei',no:10,n:'BENKEI',cat:'collector',catLabel:'수집·마스터피스',items:'한정 · 수제 단조 수집형',desc:'마스터피스·수집가용 초한정 단조 시리즈',origin:'일본',material:'수제 단조',target:'수집가 · 하이엔드',features:['초한정 생산 마스터피스 라인','수집가·애호가 대상','634 프리미엄 최상위 티어'],specs:[['분류','수집·한정'],['생산','초한정'],['구성','세트·단품 — 문의'],['가격','별도 문의']],irons:[{id:'master',name:'BENKEI 마스터피스 아이언',compose:'한정 세트',loft:'시리즈별 상이',shaft:'수제 맞춤 · 문의',desc:'초한정 수제 단조 아이언. 수집가용.',features:['수제 단조 · 초한정','634 최상위 티어','컬렉션'],specs:[['생산','초한정'],['구성','세트·단품'],['가격','별도 문의']]}]}
 ];
 let filt='all';
 let currentProduct=null;
@@ -1481,27 +1491,50 @@ function showPage(id){
 }
 function renderProducts(){
   const list=filt==='all'?products:products.filter(p=>p.cat===filt);
-  document.getElementById('productsTableBody').innerHTML=list.map(p=>`<tr class="click" onclick="navGoProduct('${p.id}')"><td>${String(p.no).padStart(2,'0')}</td><td class="name">${p.n}</td><td class="cat">${p.catLabel}</td><td>${p.items}</td><td style="color:var(--muted)">${p.desc}</td></tr>`).join('');
+  const groupsEl=document.getElementById('productCategoryGroups');
   const cards=document.getElementById('productCards');
-  if(cards)cards.innerHTML=list.map(p=>`<div class="product-card" onclick="navGoProduct('${p.id}')"><div class="pc-no">${String(p.no).padStart(2,'0')}</div><h4>${p.n}</h4><div class="pc-cat">${p.catLabel}</div><p>${p.items}</p></div>`).join('');
+  if(groupsEl){
+    if(filt==='all'){
+      groupsEl.style.display='grid';
+      groupsEl.innerHTML=catOrder.map(cat=>{
+        const items=products.filter(p=>p.cat===cat);
+        if(!items.length)return'';
+        return`<div class="prod-cat-block"><h3>${productCats[cat]}</h3><ul>${items.map(p=>`<li onclick="navGoProduct('${p.id}')"><strong>${String(p.no).padStart(2,'0')} · ${p.n}</strong><span>${p.items}</span></li>`).join('')}</ul></div>`;
+      }).join('');
+    }else groupsEl.style.display='none';
+  }
+  if(cards){
+    cards.style.display=filt==='all'?'none':'grid';
+    cards.innerHTML=list.map(p=>`<div class="product-card" onclick="navGoProduct('${p.id}')"><div class="pc-no">${String(p.no).padStart(2,'0')}</div><h4>${p.n}</h4><div class="pc-cat">${p.catLabel}</div><p>${p.items}</p></div>`).join('');
+  }
+  document.getElementById('productsTableBody').innerHTML=list.map(p=>`<tr class="click" onclick="navGoProduct('${p.id}')"><td>${String(p.no).padStart(2,'0')}</td><td class="name">${p.n}</td><td class="cat">${p.catLabel}</td><td>${p.items}</td><td style="color:var(--muted)">${p.desc}</td></tr>`).join('');
 }
 function renderSeriesWall(){
   const el=document.getElementById('homeSeriesWall');
   if(!el)return;
-  const left=products.slice(0,5),right=products.slice(5,10);
-  el.innerHTML=`<div class="series-showcase"><img src="assets/series-showcase.jpg" alt="무사시 10시리즈 CPS 아이언 · JEHOVAH NISSI 드라이버" onclick="openLightbox(this.src)"><div class="series-showcase-cap"><span>10 SERIES · JAPAN FORGED</span><p>CPS 그래핀 7아이언 · JEHOVAH NISSI 드라이버 · 프리미엄 라인업</p></div></div><div class="series-wall-cols"><ul class="series-col left">${left.map(p=>`<li onclick="navGoProduct('${p.id}')">${p.n}</li>`).join('')}</ul><ul class="series-col right">${right.map(p=>`<li onclick="navGoProduct('${p.id}')">${p.n}</li>`).join('')}</ul></div>`;
+  const seriesItem=p=>`<li onclick="navGoProduct('${p.id}')"><span class="series-cat">${p.catLabel}</span>${p.n}</li>`;
+  const left=products.filter(p=>['forged','iron','women','putter'].includes(p.cat));
+  const right=products.filter(p=>['flagship','driver','goods','limited','collector'].includes(p.cat));
+  el.innerHTML=`<div class="series-showcase"><img src="assets/series-showcase.jpg" alt="무사시 10시리즈 CPS 아이언 · JEHOVAH NISSI 드라이버" onclick="openLightbox(this.src)"><div class="series-showcase-cap"><span>10 SERIES · JAPAN FORGED</span><p>클럽 종류별 10브랜드 · Magnificat 골프화 별도</p></div></div><div class="series-wall-cols"><ul class="series-col left">${left.map(seriesItem).join('')}</ul><ul class="series-col right">${right.map(seriesItem).join('')}</ul></div>`;
 }
 const FLAGSHIP=[
   {tag:'IRON · FLAGSHIP',title:'634 CPS 그래핀 7아이언',desc:'비거리 전용 · JEHOVAH NISSI III · #5~SW',img:'assets/irons/cps-graphene/hero.jpg',onclick:"navGoIron('musashi-634','cps-graphene-7i')"},
   {tag:'DRIVER · NIGODEMO',title:'634 NICODEMUS 니고데모',desc:'JEHOVAH NISSI · 초고반발 드라이버',img:'assets/nigodemo/jehovah-nissi-course.jpg',onclick:"navGo('nigodemo')"},
-  {tag:'FOOTWEAR · PATENT',title:'Magnificat 골프화',desc:'맨발로 걷는 슈즈 · 수제 명품 · 특허',img:'assets/magnificat/cover.png',onclick:"navGo('magnificat')"}
+  {tag:'FORGED · PREMIUM',title:'HEROESZIPANGU',desc:'일본식 단조 · 프리미엄 아이언',img:'assets/series-showcase.jpg',onclick:"navGoProduct('heroeszipangu')"}
 ];
 function renderFlagship(){
   const el=document.getElementById('homeFlagship');
   if(!el)return;
   el.innerHTML=FLAGSHIP.map(f=>`<div class="flagship-card" onclick="${f.onclick}"><img src="${f.img}" alt="${f.title}"><div class="fc-body"><div class="fc-tag">${f.tag}</div><h4>${f.title}</h4><p>${f.desc}</p></div></div>`).join('');
 }
-function filterProducts(t){filt=t;document.querySelectorAll('.filter-btn').forEach(b=>{b.className='filter-btn btn btn-ghost btn-sm';});event.target.className='filter-btn btn btn-primary btn-sm';renderProducts();}
+function filterProducts(t){
+  filt=t;
+  document.querySelectorAll('.filter-btn').forEach(b=>{
+    b.className='filter-btn btn btn-ghost btn-sm';
+    if(b.dataset.cat===t)b.className='filter-btn btn btn-primary btn-sm';
+  });
+  renderProducts();
+}
 renderProducts();renderSeriesWall();renderFlagship();renderFeaturedIron();
 function toast(msg){const t=document.getElementById('siteToast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000);}
 function handleSubmit(e,brand){e.preventDefault();toast('문의가 접수되었습니다. 담당자가 연락드리겠습니다.');e.target.reset();}
