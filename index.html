@@ -472,10 +472,18 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
 .nigodemo-spec-table{width:100%;border-collapse:collapse;font-size:14px;}
 .nigodemo-spec-table th,.nigodemo-spec-table td{padding:12px 14px;border-bottom:1px solid var(--glass-bd);text-align:left;vertical-align:top;}
 .nigodemo-spec-table th{color:var(--muted);font-family:'IBM Plex Mono';font-size:11px;width:130px;font-weight:500;}
-.ng-showcase{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:center;margin-top:36px;}
-.ng-showcase-main img{width:100%;border-radius:18px;border:1px solid var(--glass-bd);cursor:pointer;box-shadow:var(--shadow-lg);display:block;}
-.ng-showcase-side{display:flex;flex-direction:column;gap:16px;}
-.ng-showcase-side p{color:var(--muted);font-size:14px;line-height:1.85;}
+.ng-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;margin-top:36px;}
+.ng-detail-copy p{color:var(--muted);font-size:14px;line-height:1.85;margin-top:16px;}
+.ng-detail-panel{background:var(--glass);border:1px solid var(--glass-bd);border-radius:16px;padding:28px;}
+.ng-detail-panel h3{font-size:13px;font-family:'IBM Plex Mono';letter-spacing:.12em;color:var(--gold-light);margin-bottom:18px;text-transform:uppercase;}
+.ng-detail-spec{width:100%;border-collapse:collapse;font-size:14px;}
+.ng-detail-spec th,.ng-detail-spec td{padding:11px 0;border-bottom:1px solid var(--glass-bd);text-align:left;vertical-align:top;line-height:1.65;}
+.ng-detail-spec th{color:var(--muted);font-family:'IBM Plex Mono';font-size:11px;width:108px;font-weight:500;}
+.ng-detail-spec tr:last-child th,.ng-detail-spec tr:last-child td{border-bottom:none;}
+.ng-detail-meaning{margin-top:20px;padding:18px 20px;border-radius:12px;border:1px solid rgba(212,175,55,.2);background:rgba(212,175,55,.05);}
+.ng-detail-meaning strong{display:block;font-size:14px;color:var(--heading);margin-bottom:6px;}
+.ng-detail-meaning span{font-size:13px;color:var(--muted);line-height:1.75;}
+@media(max-width:900px){.ng-detail-grid{grid-template-columns:1fr;}}
 .ng-markings{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
 .ng-markings span{font-family:'IBM Plex Mono';font-size:10px;padding:6px 12px;border-radius:6px;border:1px solid rgba(212,175,55,.28);color:var(--gold-light);}
 .ng-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
@@ -490,7 +498,7 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
 .ip-note{font-size:12px;color:var(--muted);line-height:1.75;margin-top:14px;}
 .ip-teaser{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;margin-top:28px;padding:28px;background:var(--surface);border:1px solid var(--glass-bd);border-radius:18px;box-shadow:var(--shadow);}
 .ip-teaser img{width:100%;max-width:220px;border-radius:10px;border:1px solid var(--glass-bd);cursor:pointer;background:#fff;}
-@media(max-width:900px){.ng-showcase,.ip-block,.ip-teaser{grid-template-columns:1fr;}.ng-gallery{grid-template-columns:1fr;}}
+@media(max-width:900px){.ip-block,.ip-teaser{grid-template-columns:1fr;}.ng-gallery{grid-template-columns:1fr;}}
 .nigodemo-hero{position:relative;min-height:clamp(520px,78vh,720px);padding:clamp(100px,11vw,128px) 0 clamp(56px,7vw,72px);overflow:hidden;text-align:left;}
 .nigodemo-hero::before{content:'';position:absolute;inset:0;background:url('assets/nigodemo/jehovah-nissi-course.jpg') center 35%/cover no-repeat;opacity:.28;transform:scale(1.04);}
 .nigodemo-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(108deg,rgba(15,23,42,.97) 0%,rgba(15,23,42,.9) 46%,rgba(15,23,42,.78) 100%);}
@@ -900,22 +908,30 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
     <div class="sec-label">JEHOVAH NISSI</div>
     <h2>The Miracle of <span class="grad">Moses</span></h2>
     <p style="color:var(--muted);max-width:720px;line-height:1.85;margin-top:12px;">JEHOVAH NISSI(「여호와는 나의 깃발」) 프리미엄 드라이버. 골드 미러 솔 · SOLI DEO GLORIA · The Miracle of Moses 각인. 니고데모 라인과 함께 무사시 634의 대표 드라이버 컬렉션입니다.</p>
-    <div class="ng-showcase">
-      <div class="ng-showcase-main">
-        <img src="assets/nigodemo/jehovah-nissi-luxury.jpg" alt="JEHOVAH NISSI The Miracle of Moses 드라이버" onclick="openLightbox(this.src)">
-      </div>
-      <div class="ng-showcase-side">
+    <div class="ng-detail-grid">
+      <div class="ng-detail-copy">
         <div class="ng-markings">
           <span>JEHOVAH NISSI</span>
           <span>SOLI DEO GLORIA</span>
           <span>THE LORD IS MY BANNER</span>
           <span>THE MIRACLE OF MOSES</span>
         </div>
-        <p>헤드 하단 골드·블랙 대비와 호젤 각인으로 시리즈 철학을 담았습니다. 필드·스튜디오 촬영 기준 실제 제품 이미지입니다.</p>
-        <div class="ng-gallery" style="margin-top:0;grid-template-columns:1fr 1fr;">
-          <img src="assets/nigodemo/jehovah-nissi-course.jpg" alt="JEHOVAH NISSI 필드" onclick="openLightbox(this.src)">
-          <img src="assets/nigodemo/jehovah-nissi-studio.jpg" alt="JEHOVAH NISSI 클로즈업" onclick="openLightbox(this.src)">
+        <p>헤드 하단 골드·블랙 대비와 호젤 각인으로 시리즈 철학을 담았습니다. 골드 미러 솔과 블랙 바디의 대비가 필드에서도 시인성을 높입니다.</p>
+        <div class="ng-detail-meaning">
+          <strong>여호와는 나의 깃발 (JEHOVAH NISSI)</strong>
+          <span>출애굽기 17:15 — 이스라엘이 아말렉과의 전투에서 승리한 후 모세가 세운 제단 이름. 「승리의 깃발」이라는 뜻을 담아, 드라이버의 방향성·비거리 철학과 연결됩니다.</span>
         </div>
+      </div>
+      <div class="ng-detail-panel">
+        <h3>Engraving · Spec</h3>
+        <table class="ng-detail-spec">
+          <tr><th>시리즈</th><td>JEHOVAH NISSI III · HYPER SPEED TECHNOLOGY</td></tr>
+          <tr><th>각인</th><td>SOLI DEO GLORIA · The Miracle of Moses</td></tr>
+          <tr><th>솔</th><td>골드 미러 · 초고반발</td></tr>
+          <tr><th>로프트</th><td>10.5° (표준) · 9° · 10° (니고데모2)</td></tr>
+          <tr><th>샤프트</th><td>R · SR · S — 문의 안내</td></tr>
+          <tr><th>제조</th><td>무사시634 · 일본</td></tr>
+        </table>
       </div>
     </div>
   </div></section>
