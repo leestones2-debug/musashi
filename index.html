@@ -376,9 +376,8 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
 .assoc-card{background:var(--glass);border:1px solid var(--glass-bd);border-radius:16px;overflow:hidden;transition:.3s;}
 .assoc-card:hover{border-color:rgba(212,175,55,.32);transform:translateY(-4px);}
 .assoc-visual{aspect-ratio:16/10;background:#0F172A;border-bottom:1px solid var(--glass-bd);overflow:hidden;}
-.assoc-visual img{width:100%;height:100%;object-fit:cover;display:block;max-width:none;border-radius:0;}
-.assoc-wall{border-radius:18px;overflow:hidden;border:1px solid var(--glass-bd);margin-bottom:36px;box-shadow:var(--shadow-lg);cursor:pointer;}
-.assoc-wall img{width:100%;display:block;aspect-ratio:3/2;object-fit:cover;}
+.assoc-badge{display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 30%,rgba(212,175,55,.12),#0F172A 70%);}
+.assoc-visual img,.assoc-badge img{width:100%;height:100%;object-fit:cover;display:block;max-width:none;border-radius:0;}
 .assoc-body{padding:22px 24px 26px;}
 .assoc-card .en{font-family:'IBM Plex Mono';font-size:10px;color:var(--gold-light);letter-spacing:.12em;margin-bottom:6px;text-transform:uppercase;}
 .assoc-card h3{font-size:16px;margin-bottom:8px;line-height:1.4;}
@@ -485,7 +484,15 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
 .band-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
 .band-meta span{font-family:'IBM Plex Mono';font-size:11px;padding:6px 12px;border-radius:6px;border:1px solid var(--glass-bd);color:var(--muted);}
 .quote-box{border-left:3px solid var(--gold);padding:20px 24px;margin:36px 0;background:rgba(212,175,55,.05);border-radius:0 12px 12px 0;color:var(--muted);font-size:14px;line-height:1.85;}
-.community-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--block-gap);margin-top:40px;align-items:start;}
+.community-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--block-gap);margin-top:40px;align-items:stretch;}
+.community-visual{display:grid;grid-template-rows:1.15fr 1fr;gap:12px;min-height:100%;}
+.community-visual img{width:100%;height:100%;min-height:150px;border-radius:14px;border:1px solid var(--glass-bd);object-fit:cover;cursor:pointer;transition:.3s;display:block;box-shadow:var(--shadow);}
+.community-visual img:hover{border-color:rgba(212,175,55,.4);transform:translateY(-2px);}
+.community-visual-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.band-gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-top:20px;}
+.band-gallery img{width:100%;border-radius:14px;border:1px solid var(--glass-bd);aspect-ratio:16/10;object-fit:cover;cursor:pointer;display:block;transition:.3s;box-shadow:var(--shadow);}
+.band-gallery img:hover{border-color:rgba(6,182,110,.45);transform:translateY(-2px);}
+@media(max-width:900px){.band-gallery{grid-template-columns:1fr;}.community-visual{grid-template-rows:auto;}}
 .community-box{background:var(--glass);border:1px solid var(--glass-bd);border-radius:14px;padding:28px;}
 .community-box h3{font-size:17px;margin-bottom:12px;}
 .community-box p{color:var(--muted);font-size:14px;line-height:1.85;margin-bottom:16px;}
@@ -689,6 +696,11 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
         <button class="btn btn-ghost" onclick="navGo('nigodemo')">니고데모 라인업</button>
       </div>
     </div>
+    <div class="band-gallery">
+      <img src="assets/nigodemo/jehovah-nissi-course.jpg" alt="니고데모 JEHOVAH NISSI 드라이버" onclick="openLightbox(this.src)">
+      <img src="assets/nigodemo/jehovah-nissi-studio.jpg" alt="니고데모 드라이버 클로즈업" onclick="openLightbox(this.src)">
+      <img src="assets/irons/cps-graphene/hero.jpg" alt="634 CPS 그래핀 아이언" onclick="openLightbox(this.src)">
+    </div>
   </div></section>
   <section class="pad"><div class="wrap reveal">
     <div class="sec-label">Company</div>
@@ -736,18 +748,17 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
     <div class="sec-label">Associations</div>
     <h2>무사시가 설립한 <span class="grad">골프 협회</span></h2>
     <p style="color:var(--muted);max-width:620px;margin:12px 0 0;line-height:1.85;">인터네셔널 무사시 634 그룹 회장님이 설립·운영하는 한국골프산업협회(KGIA) 및 코리아프로페셔널골프 관련 단체입니다. <span style="color:var(--muted);font-size:13px;">※ 한국프로골프협회(KPGA, kpga.co.kr)와는 별개 기관입니다.</span></p>
-    <div class="assoc-wall reveal" onclick="openLightbox('assets/musashi-associations.png')"><img src="assets/musashi-associations.png" alt="무사시 설립 골프 협회 현판"></div>
     <div class="assoc-grid">
       <div class="assoc-card">
-        <div class="assoc-visual"><img src="assets/assoc/kgia.jpg" alt="한국골프산업협회 KGIA"></div>
+        <div class="assoc-visual assoc-badge"><img src="assets/assoc/kgia.svg" alt="한국골프산업협회 KGIA"></div>
         <div class="assoc-body"><div class="en">KGIA</div><h3>한국골프산업협회</h3><p>Korea Golf Industry Association. 국내 골프산업 발전과 회원사·관련 기업 협력.</p></div>
       </div>
       <div class="assoc-card">
-        <div class="assoc-visual"><img src="assets/assoc/kpg-assoc.jpg" alt="코리아프로페셔널골프협회"></div>
+        <div class="assoc-visual assoc-badge"><img src="assets/assoc/kpg-assoc.svg" alt="코리아프로페셔널골프협회"></div>
         <div class="assoc-body"><div class="en">KPG Association</div><h3>공익법인 (사) 코리아프로페셔널골프협회</h3><p>2024년 8월 출범 · 2025년 공익법인. 엄재용 이사장. 골프 대중화·문화관광·인식개선.</p></div>
       </div>
       <div class="assoc-card">
-        <div class="assoc-visual"><img src="assets/assoc/gpg-corp.jpg" alt="주식회사 코리아프로페셔널골프"></div>
+        <div class="assoc-visual assoc-badge"><img src="assets/assoc/gpg-corp.svg" alt="주식회사 코리아프로페셔널골프"></div>
         <div class="assoc-body"><div class="en">GPG</div><h3>주식회사 코리아프로페셔널골프</h3><p>Korea Professional Golf. 골프장·교육·운영 사업. 사회공헌·대회 후원 참여.</p></div>
       </div>
     </div>
@@ -896,6 +907,13 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
         </ul>
         <div style="margin-top:20px;">
           <a class="btn btn-band" href="https://band.us/@634nicodemus" target="_blank" rel="noopener">밴드 가입하기 →</a>
+        </div>
+      </div>
+      <div class="community-visual">
+        <img src="assets/nigodemo/jehovah-nissi-course.jpg" alt="니고데모 JEHOVAH NISSI 드라이버" onclick="openLightbox(this.src)">
+        <div class="community-visual-row">
+          <img src="assets/nigodemo/jehovah-nissi-studio.jpg" alt="니고데모 드라이버" onclick="openLightbox(this.src)">
+          <img src="assets/nigodemo/jehovah-nissi-luxury.jpg" alt="JEHOVAH NISSI The Miracle of Moses" onclick="openLightbox(this.src)">
         </div>
       </div>
     </div>
@@ -1292,10 +1310,9 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
     <div class="sec-label">634 Group · Associations</div>
     <h1>무사시 <span class="grad">골프 협회</span></h1>
     <p style="color:var(--muted);max-width:620px;margin-top:16px;line-height:1.85;">회장님이 무사시 그룹에서 설립한 협회·법인입니다. 골프산업 발전, 대중화, 사회공헌 대회까지 한국 골프 생태계를 이끕니다. <span style="font-size:13px;">※ 1968년 설립 한국프로골프협회(KPGA)와는 별개 기관입니다.</span></p>
-    <div class="assoc-wall reveal" onclick="openLightbox('assets/musashi-associations.png')"><img src="assets/musashi-associations.png" alt="무사시 설립 골프 협회 현판"></div>
     <div class="assoc-grid reveal">
       <div class="assoc-card">
-        <div class="assoc-visual"><img src="assets/assoc/kgia.jpg" alt="한국골프산업협회 KGIA"></div>
+        <div class="assoc-visual assoc-badge"><img src="assets/assoc/kgia.svg" alt="한국골프산업협회 KGIA"></div>
         <div class="assoc-body">
           <div class="en">KGIA</div>
           <h3>한국골프산업협회</h3>
@@ -1304,7 +1321,7 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
         </div>
       </div>
       <div class="assoc-card">
-        <div class="assoc-visual"><img src="assets/assoc/kpg-assoc.jpg" alt="코리아프로페셔널골프협회"></div>
+        <div class="assoc-visual assoc-badge"><img src="assets/assoc/kpg-assoc.svg" alt="코리아프로페셔널골프협회"></div>
         <div class="assoc-body">
           <div class="en">KPG</div>
           <h3>공익법인 (사) 코리아프로페셔널골프협회</h3>
@@ -1315,7 +1332,7 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
         </div>
       </div>
       <div class="assoc-card">
-        <div class="assoc-visual"><img src="assets/assoc/gpg-corp.jpg" alt="주식회사 코리아프로페셔널골프"></div>
+        <div class="assoc-visual assoc-badge"><img src="assets/assoc/gpg-corp.svg" alt="주식회사 코리아프로페셔널골프"></div>
         <div class="assoc-body">
           <div class="en">GPG</div>
           <h3>주식회사 코리아프로페셔널골프</h3>
