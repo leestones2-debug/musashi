@@ -491,6 +491,49 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
 .ip-teaser{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;margin-top:28px;padding:28px;background:var(--surface);border:1px solid var(--glass-bd);border-radius:18px;box-shadow:var(--shadow);}
 .ip-teaser img{width:100%;max-width:220px;border-radius:10px;border:1px solid var(--glass-bd);cursor:pointer;background:#fff;}
 @media(max-width:900px){.ng-showcase,.ip-block,.ip-teaser{grid-template-columns:1fr;}.ng-gallery{grid-template-columns:1fr;}}
+.nigodemo-hero{position:relative;min-height:clamp(520px,78vh,720px);padding:clamp(100px,11vw,128px) 0 clamp(56px,7vw,72px);overflow:hidden;text-align:left;}
+.nigodemo-hero::before{content:'';position:absolute;inset:0;background:url('assets/nigodemo/jehovah-nissi-course.jpg') center 35%/cover no-repeat;opacity:.28;transform:scale(1.04);}
+.nigodemo-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(108deg,rgba(15,23,42,.97) 0%,rgba(15,23,42,.9) 46%,rgba(15,23,42,.78) 100%);}
+.nigodemo-hero-glow{position:absolute;top:18%;left:-8%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.14),transparent 68%);pointer-events:none;z-index:1;}
+.nigodemo-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr minmax(260px,400px);gap:clamp(28px,4vw,52px);align-items:center;}
+.nigodemo-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.28);padding:8px 16px;border-radius:100px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.22em;color:var(--gold-light);margin-bottom:22px;}
+.nigodemo-hero-badge i{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite;}
+.nigodemo-hero h1{text-align:left;font-size:clamp(38px,5.2vw,58px);line-height:1.08;margin:0;}
+.nigodemo-hero-lead{color:var(--text);font-size:clamp(15px,1.6vw,17px);max-width:520px;margin:22px 0 0;line-height:1.85;}
+.nigodemo-hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.nigodemo-hero-chips span{font-family:'IBM Plex Mono';font-size:10px;padding:6px 12px;border-radius:6px;border:1px solid rgba(212,175,55,.24);color:var(--gold-light);}
+.nigodemo-hero .hero-btns{justify-content:flex-start;margin-top:28px;}
+.nigodemo-hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px;max-width:420px;}
+.ng-stat{background:var(--glass);border:1px solid var(--glass-bd);border-radius:12px;padding:14px 12px;text-align:center;}
+.ng-stat-val{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--gold-light);line-height:1.1;}
+.ng-stat-label{font-family:'IBM Plex Mono';font-size:9px;color:var(--muted);letter-spacing:.06em;margin-top:6px;}
+.nigodemo-hero-visual{display:flex;flex-direction:column;gap:12px;}
+.nigodemo-hero-frame{position:relative;border-radius:20px;overflow:hidden;border:1px solid rgba(212,175,55,.32);box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 0 1px rgba(212,175,55,.08);background:var(--surface);}
+.nigodemo-hero-frame img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1);}
+.nigodemo-hero-frame:hover img{transform:scale(1.03);}
+.nigodemo-hero-caption{position:absolute;left:0;right:0;bottom:0;padding:20px 22px;background:linear-gradient(180deg,transparent,rgba(15,23,42,.92));pointer-events:none;}
+.nigodemo-hero-caption span{display:block;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.18em;color:var(--gold);}
+.nigodemo-hero-caption strong{display:block;font-size:15px;color:var(--heading);margin-top:6px;}
+.nigodemo-hero-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.nigodemo-hero-thumbs img{width:100%;border-radius:12px;border:1px solid var(--glass-bd);aspect-ratio:16/10;object-fit:cover;cursor:pointer;transition:.3s;display:block;}
+.nigodemo-hero-thumbs img:hover{border-color:rgba(212,175,55,.4);transform:translateY(-2px);}
+.nigodemo-quick{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-28px;position:relative;z-index:3;}
+.ng-quick-card{background:var(--surface);border:1px solid var(--glass-bd);border-radius:14px;padding:20px 22px;cursor:pointer;transition:.3s;box-shadow:var(--shadow);}
+.ng-quick-card:hover{border-color:rgba(212,175,55,.35);transform:translateY(-3px);}
+.ng-quick-card .ng-tag{font-family:'IBM Plex Mono';font-size:10px;color:var(--gold);margin-bottom:8px;}
+.ng-quick-card h4{font-size:15px;margin-bottom:6px;color:var(--heading);}
+.ng-quick-card p{font-size:13px;color:var(--muted);line-height:1.65;}
+.nigodemo-marquee{border-top:1px solid var(--glass-bd);border-bottom:1px solid var(--glass-bd);background:rgba(15,23,42,.6);}
+@media(max-width:900px){
+  .nigodemo-hero{min-height:auto;padding-top:96px;}
+  .nigodemo-hero-grid{grid-template-columns:1fr;}
+  .nigodemo-hero-visual{order:-1;max-width:360px;margin:0 auto;}
+  .nigodemo-hero h1,.nigodemo-hero-lead{text-align:center;margin-left:auto;margin-right:auto;}
+  .nigodemo-hero-badge{margin-left:auto;margin-right:auto;}
+  .nigodemo-hero-chips,.nigodemo-hero .hero-btns{justify-content:center;}
+  .nigodemo-hero-stats{max-width:none;margin-left:auto;margin-right:auto;}
+  .nigodemo-quick{grid-template-columns:1fr;margin-top:24px;}
+}
 .band-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
 .band-meta span{font-family:'IBM Plex Mono';font-size:11px;padding:6px 12px;border-radius:6px;border:1px solid var(--glass-bd);color:var(--muted);}
 .quote-box{border-left:3px solid var(--gold);padding:20px 24px;margin:36px 0;background:rgba(212,175,55,.05);border-radius:0 12px 12px 0;color:var(--muted);font-size:14px;line-height:1.85;}
@@ -788,26 +831,72 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
 
 <!-- NIGODEMO · Band content -->
 <div id="page-nigodemo" class="page">
-  <section class="hero"><div class="wrap">
-    <div class="sec-label">634 · Nigo Demo</div>
-    <h1>니고데모<br><span class="grad">드라이버</span></h1>
-    <p>비거리·방향성의 고민을 한방에 — 634 NICODEMUS 니고데모(Nigo Demo) 라인. 일본 무사시 단조·초고반발 기술을 적용했습니다.</p>
-    <div class="hero-btns">
-      <a class="btn btn-band" href="https://band.us/@634nicodemus" target="_blank" rel="noopener">공식 밴드 가입 →</a>
+  <section class="nigodemo-hero">
+    <div class="nigodemo-hero-glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="nigodemo-hero-grid reveal">
+        <div class="nigodemo-hero-copy">
+          <div class="nigodemo-hero-badge"><i></i>634 · NIGO DEMO · JAPAN FORGED</div>
+          <h1>니고데모<br><span class="grad">드라이버</span></h1>
+          <p class="nigodemo-hero-lead">비거리·방향성의 고민을 한방에 — 634 NICODEMUS 니고데모(Nigo Demo) 라인. 일본 무사시 단조·초고반발 헤드로 필드에서 차이를 만듭니다.</p>
+          <div class="nigodemo-hero-chips">
+            <span>JEHOVAH NISSI</span>
+            <span>SOLI DEO GLORIA</span>
+            <span>THE MIRACLE OF MOSES</span>
+          </div>
+          <div class="hero-btns">
+            <a class="btn btn-band" href="https://band.us/@634nicodemus" target="_blank" rel="noopener">공식 밴드 가입 →</a>
+            <button class="btn btn-ghost" onclick="document.getElementById('ng-lineup').scrollIntoView({behavior:'smooth'})">제품군 보기</button>
+          </div>
+          <div class="nigodemo-hero-stats">
+            <div class="ng-stat"><div class="ng-stat-val">924</div><div class="ng-stat-label">밴드 멤버</div></div>
+            <div class="ng-stat"><div class="ng-stat-val">2017</div><div class="ng-stat-label">공식 개설</div></div>
+            <div class="ng-stat"><div class="ng-stat-val">10.5°</div><div class="ng-stat-label">표준 로프트</div></div>
+          </div>
+        </div>
+        <div class="nigodemo-hero-visual">
+          <div class="nigodemo-hero-frame">
+            <img src="assets/nigodemo/jehovah-nissi-luxury.jpg" alt="JEHOVAH NISSI The Miracle of Moses 드라이버" onclick="openLightbox(this.src)">
+            <div class="nigodemo-hero-caption"><span>FLAGSHIP · NIGODEMO</span><strong>JEHOVAH NISSI Driver</strong></div>
+          </div>
+          <div class="nigodemo-hero-thumbs">
+            <img src="assets/nigodemo/jehovah-nissi-studio.jpg" alt="니고데모 드라이버 클로즈업" onclick="openLightbox(this.src)">
+            <img src="assets/nigodemo/jehovah-nissi-course.jpg" alt="니고데모 필드" onclick="openLightbox(this.src)">
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="band-meta reveal" style="justify-content:center;margin-top:32px;">
-      <span>멤버 924</span>
-      <span>2017.02 개설</span>
-      <span>band.us/@634nicodemus</span>
+  </section>
+  <section class="pad" style="padding-top:0;padding-bottom:32px;"><div class="wrap">
+    <div class="nigodemo-quick reveal">
+      <div class="ng-quick-card" onclick="document.getElementById('ng-lineup').scrollIntoView({behavior:'smooth'})">
+        <div class="ng-tag">DRIVER</div>
+        <h4>634 NICODEMUS</h4>
+        <p>니고데모 드라이버 · 10.5° · R/SR/S 샤프트</p>
+      </div>
+      <div class="ng-quick-card" onclick="document.getElementById('ng-jehovah').scrollIntoView({behavior:'smooth'})">
+        <div class="ng-tag">FLAGSHIP</div>
+        <h4>JEHOVAH NISSI</h4>
+        <p>골드 미러 · SOLI DEO GLORIA 각인</p>
+      </div>
+      <div class="ng-quick-card" onclick="document.getElementById('ng-lineup').scrollIntoView({behavior:'smooth'})">
+        <div class="ng-tag">WEDGE · SET</div>
+        <h4>웨지 · 풀세트</h4>
+        <p>48°~60° 단조 웨지 · 원스톱 세트 상담</p>
+      </div>
     </div>
   </div></section>
+  <div class="marquee nigodemo-marquee"><div class="track">
+    <span><i class="wh">NIGODEMO</i>&nbsp;<b>·</b>&nbsp;<i class="hi">634 NICODEMUS</i>&nbsp;<b>·</b>&nbsp;<i class="wh">JEHOVAH NISSI</i>&nbsp;<b>·</b>&nbsp;<i class="hi">SOLI DEO GLORIA</i>&nbsp;<b>·</b>&nbsp;<i class="wh">HYPER SPEED</i>&nbsp;<b>·</b>&nbsp;<i class="hi">OFFICIAL BAND 924</i>&nbsp;<b>·</b>&nbsp;</span>
+    <span><i class="wh">NIGODEMO</i>&nbsp;<b>·</b>&nbsp;<i class="hi">634 NICODEMUS</i>&nbsp;<b>·</b>&nbsp;<i class="wh">JEHOVAH NISSI</i>&nbsp;<b>·</b>&nbsp;<i class="hi">SOLI DEO GLORIA</i>&nbsp;<b>·</b>&nbsp;<i class="wh">HYPER SPEED</i>&nbsp;<b>·</b>&nbsp;<i class="hi">OFFICIAL BAND 924</i>&nbsp;<b>·</b>&nbsp;</span>
+  </div></div>
   <section class="pad"><div class="wrap reveal">
     <div class="sec-label">Philosophy</div>
     <h2>비거리야, <span class="grad">물러갈라</span></h2>
     <p style="color:var(--muted);max-width:680px;line-height:1.85;margin-top:12px;">공식 밴드 리더 MUSASHI CPS IRON의 슬로건. 니고데모 드라이버는 비거리와 방향성을 동시에 잡는 초고반발 헤드 설계로, 아마추어·실력 골퍼의 고민을 해결하는 대표 모델입니다.</p>
     <blockquote class="quote-box">내게 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라. <span style="color:var(--gold-light);font-family:'IBM Plex Mono';font-size:12px;">— 빌립보서 4:13</span></blockquote>
   </div></section>
-  <section class="pad"><div class="wrap reveal">
+  <section class="pad" id="ng-jehovah"><div class="wrap reveal">
     <div class="sec-label">JEHOVAH NISSI</div>
     <h2>The Miracle of <span class="grad">Moses</span></h2>
     <p style="color:var(--muted);max-width:720px;line-height:1.85;margin-top:12px;">JEHOVAH NISSI(「여호와는 나의 깃발」) 프리미엄 드라이버. 골드 미러 솔 · SOLI DEO GLORIA · The Miracle of Moses 각인. 니고데모 라인과 함께 무사시 634의 대표 드라이버 컬렉션입니다.</p>
@@ -850,7 +939,7 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
       </div>
     </div>
   </div></section>
-  <section class="pad"><div class="wrap reveal">
+  <section class="pad" id="ng-lineup"><div class="wrap reveal">
     <div class="sec-label">Lineup</div>
     <h2>니고데모 <span class="grad">제품군</span></h2>
     <p style="color:var(--muted);margin-top:12px;line-height:1.75;">공식 밴드 기준 주요 모델 (구성·재고는 문의 안내)</p>
