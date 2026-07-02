@@ -500,6 +500,8 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
 .ip-teaser img{width:100%;max-width:220px;border-radius:10px;border:1px solid var(--glass-bd);cursor:pointer;background:#fff;}
 .ip-dual{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;}
 .ip-dual .ip-teaser{margin-top:0;}
+.ip-dual .ip-teaser img,.ip-block .ip-cert img{max-width:100%;width:100%;}
+.ip-hero-block{margin-top:28px;}
 @media(max-width:900px){.ip-block,.ip-teaser,.ip-dual{grid-template-columns:1fr;}.ng-gallery{grid-template-columns:1fr;}}
 .nigodemo-hero{position:relative;min-height:clamp(520px,78vh,720px);padding:clamp(100px,11vw,128px) 0 clamp(56px,7vw,72px);overflow:hidden;text-align:left;}
 .nigodemo-hero::before{content:'';position:absolute;inset:0;background:url('assets/nigodemo/jehovah-nissi-course.jpg') center 35%/cover no-repeat;opacity:.28;transform:scale(1.04);}
@@ -746,6 +748,20 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
     <h2>대표 <span class="grad">제품</span></h2>
     <p style="color:var(--muted);margin-top:12px;line-height:1.75;">무사시 634 그룹 대표 골프클럽 — CPS 아이언 · 니고데모 드라이버 · NICODEMUS</p>
     <div class="flagship-grid" id="homeFlagship"></div>
+    <div class="ip-block ip-hero-block" id="home-patent">
+      <div class="ip-cert"><img src="assets/ip/patent-iron-head.png" alt="골프 클럽 헤드 특허증 — 클릭하여 확대" onclick="openLightbox(this.src)"></div>
+      <div>
+        <div class="sec-label" style="margin-bottom:10px;">Patent · Iron</div>
+        <h3 style="font-size:22px;margin-bottom:10px;">CPS 아이언 <span class="grad">특허등록</span></h3>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:14px;">「골프 클럽 헤드 및 그 제조 방법」— CPS 그래핀 7아이언 헤드 설계·제조 기술 특허 (지식재산처)</p>
+        <table class="ip-table">
+          <tr><th>특허번호</th><td><strong style="color:var(--heading)">제 10-2961654 호</strong></td></tr>
+          <tr><th>출원번호</th><td>제 10-2025-0150866 호</td></tr>
+          <tr><th>등록일</th><td>2026.04.30</td></tr>
+        </table>
+        <button class="btn btn-primary btn-sm" style="margin-top:18px;" onclick="navGoIron('musashi-634','cps-graphene-7i')">CPS 아이언 상세 →</button>
+      </div>
+    </div>
   </div></section>
   <section class="pad" style="padding-top:0;"><div class="wrap reveal">
     <div class="band-cta-banner">
