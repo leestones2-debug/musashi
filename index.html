@@ -498,7 +498,9 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
 .ip-note{font-size:12px;color:var(--muted);line-height:1.75;margin-top:14px;}
 .ip-teaser{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;margin-top:28px;padding:28px;background:var(--surface);border:1px solid var(--glass-bd);border-radius:18px;box-shadow:var(--shadow);}
 .ip-teaser img{width:100%;max-width:220px;border-radius:10px;border:1px solid var(--glass-bd);cursor:pointer;background:#fff;}
-@media(max-width:900px){.ip-block,.ip-teaser{grid-template-columns:1fr;}.ng-gallery{grid-template-columns:1fr;}}
+.ip-dual{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;}
+.ip-dual .ip-teaser{margin-top:0;}
+@media(max-width:900px){.ip-block,.ip-teaser,.ip-dual{grid-template-columns:1fr;}.ng-gallery{grid-template-columns:1fr;}}
 .nigodemo-hero{position:relative;min-height:clamp(520px,78vh,720px);padding:clamp(100px,11vw,128px) 0 clamp(56px,7vw,72px);overflow:hidden;text-align:left;}
 .nigodemo-hero::before{content:'';position:absolute;inset:0;background:url('assets/nigodemo/jehovah-nissi-course.jpg') center 35%/cover no-repeat;opacity:.28;transform:scale(1.04);}
 .nigodemo-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(108deg,rgba(15,23,42,.97) 0%,rgba(15,23,42,.9) 46%,rgba(15,23,42,.78) 100%);}
@@ -776,19 +778,33 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
   </div></section>
   <section class="pad"><div class="wrap reveal">
     <div class="sec-label">Brand · IP</div>
-    <h2>공식 <span class="grad">상표등록</span> · JEHOVAH NISSI</h2>
-    <p style="color:var(--muted);max-width:680px;margin-top:12px;line-height:1.85;">「MUSASHI 634」브랜드는 특허청 상표등록을 완료했습니다. JEHOVAH NISSI 시리즈 드라이버는 SOLI DEO GLORIA · The Miracle of Moses 각인과 함께 프리미엄 라인을 대표합니다.</p>
-    <div class="ip-teaser">
-      <div>
-        <p class="mag-patent" style="margin-top:0;">상표등록증 · MUSASHI 634</p>
-        <table class="ip-table">
-          <tr><th>등록번호</th><td>제 40-2392870 호</td></tr>
-          <tr><th>등록일</th><td>2025.07.24</td></tr>
-          <tr><th>지정상품</th><td>제35류 — 골프가방 소매업 등</td></tr>
-        </table>
-        <button class="btn btn-ghost btn-sm" style="margin-top:16px;" onclick="navGo('nigodemo')">드라이버 · 상표 상세 →</button>
+    <h2>상표등록 · <span class="grad">아이언 특허</span></h2>
+    <p style="color:var(--muted);max-width:720px;margin-top:12px;line-height:1.85;">「MUSASHI 634」브랜드 상표등록과 CPS 그래핀 아이언 헤드 특허를 보유합니다. JEHOVAH NISSI 시리즈는 SOLI DEO GLORIA · The Miracle of Moses 각인과 함께 프리미엄 라인을 대표합니다.</p>
+    <div class="ip-dual">
+      <div class="ip-teaser">
+        <div>
+          <p class="mag-patent" style="margin-top:0;">상표등록증 · MUSASHI 634</p>
+          <table class="ip-table">
+            <tr><th>등록번호</th><td>제 40-2392870 호</td></tr>
+            <tr><th>등록일</th><td>2025.07.24</td></tr>
+            <tr><th>지정상품</th><td>제35류 — 골프가방 소매업 등</td></tr>
+          </table>
+          <button class="btn btn-ghost btn-sm" style="margin-top:16px;" onclick="navGo('nigodemo')">상표 상세 →</button>
+        </div>
+        <img src="assets/ip/trademark-musashi634.jpg" alt="MUSASHI 634 상표등록증" onclick="openLightbox(this.src)">
       </div>
-      <img src="assets/ip/trademark-musashi634.jpg" alt="MUSASHI 634 상표등록증" onclick="openLightbox(this.src)">
+      <div class="ip-teaser">
+        <div>
+          <p class="mag-patent" style="margin-top:0;">특허증 · 골프 클럽 헤드</p>
+          <table class="ip-table">
+            <tr><th>특허번호</th><td>제 10-2961654 호</td></tr>
+            <tr><th>발명의 명칭</th><td>골프 클럽 헤드 및 그 제조 방법</td></tr>
+            <tr><th>등록일</th><td>2026.04.30</td></tr>
+          </table>
+          <button class="btn btn-ghost btn-sm" style="margin-top:16px;" onclick="navGoIron('musashi-634','cps-graphene-7i')">CPS 아이언 상세 →</button>
+        </div>
+        <img src="assets/ip/patent-iron-head.png" alt="골프 클럽 헤드 특허증" onclick="openLightbox(this.src)">
+      </div>
     </div>
     <div class="ng-gallery" style="margin-top:24px;">
       <img src="assets/nigodemo/jehovah-nissi-luxury.jpg" alt="JEHOVAH NISSI 드라이버" onclick="openLightbox(this.src)">
@@ -1069,6 +1085,17 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
     <div class="iron-section reveal" style="margin-top:32px;border-top:none;padding-top:0;">
       <h3 style="font-size:18px;margin-bottom:12px;">대표 아이언 <span class="grad">CPS 그래핀</span></h3>
       <div class="iron-grid" id="featuredIron"></div>
+      <div class="ip-teaser reveal" style="margin-top:28px;">
+        <div>
+          <p class="mag-patent" style="margin-top:0;">특허증 · 골프 클럽 헤드 및 그 제조 방법</p>
+          <table class="ip-table">
+            <tr><th>특허번호</th><td>제 10-2961654 호</td></tr>
+            <tr><th>출원번호</th><td>제 10-2025-0150866 호</td></tr>
+            <tr><th>등록일</th><td>2026.04.30</td></tr>
+          </table>
+        </div>
+        <img src="assets/ip/patent-iron-head.png" alt="CPS 아이언 헤드 특허증" onclick="openLightbox(this.src)">
+      </div>
     </div>
   </div></section>
 </div>
@@ -1522,7 +1549,8 @@ const trinityPages=['trinity','franchise'];
 const magnificatPages=['magnificat'];
 const productCats={flagship:'그룹 플래그십',driver:'드라이버·니고데모',iron:'아이언·세트',putter:'퍼터·입문',women:'우먼스',forged:'단조·프리미엄',limited:'한정·에디션',collector:'수집·마스터피스',goods:'용품·액세서리'};
 const catOrder=['flagship','driver','iron','putter','women','forged','limited','collector','goods'];
-const CPS_IRON={id:'cps-graphene-7i',featured:true,name:'[비거리 전용] 634 CPS 그래핀 그라파이트 7아이언',compose:'#5 · #6 · #7 · #8 · #9 · PW · SW',loft:'24° ~ 55°',shaft:'CPS 그래핀 100% · R / SR / S',desc:'무사시 634 대표 비거리 아이언. JEHOVAH NISSI III · HYPER SPEED TECHNOLOGY 적용. 남녀공용 나노 그래핀 샤프트 7pc 세트.',price:'1,890,000',priceOrig:'2,490,000',hero:'assets/irons/cps-graphene/hero.jpg',detailImg:'assets/irons/cps-graphene/spec-banner.jpg',bullets:['비거리 절대 보장','인생 최고의 비거리','초경량 · 가장 쉬운 아이언'],markings:['JEHOVAH NISSI III','HYPER SPEED TECHNOLOGY','SOLI DEO GLORIA','MUSASHI 634'],features:['CPS(Nano Product System) 100% 그래핀 샤프트 — Self Control Flex','초경량 헤드 + 고탄성 샤프트로 비거리·이지 스윙','페이스 하단 이중 홈 — 볼 스피드·관용성 향상','샤프트 컬러: 오렌지 · 라임 · 실버 그라데이션','Musashi 블랙 그립 · 캐비티백 골드 포인트'],specs:[['품명','무사시 634 CPS 그래핀 그라파이트 7아이언'],['성별','남녀공용'],['구성','#5~SW 7pc 세트'],['재질','금속 + 그래핀'],['제조국','대한민국'],['출시','2025년'],['제조','무사시 634 / ㈜씨엔씨인터내셔널']],clubs:[['클럽','로프트','라이','길이','헤드중량'],['#5','24°','61°','38"','358g'],['#6','27°','61.5°','37.5"','365g'],['#7','31°','62°','37"','372g'],['#8','35°','62.5°','36.5"','379g'],['#9','40°','63°','36"','386g'],['PW','45°','63.5°','35.5"','393g'],['SW','55°','64°','35.25"','400g']],shafts:[['플렉스','중량','토크','CPM','킥포인트'],['R','48g','4.2','245','Low/Mid'],['SR','50g','4.0','255','Low/Mid'],['S','52g','3.8','265','Low/Mid']]};
+const IRON_PATENT_HTML=`<div class="ip-block reveal on" style="margin-top:36px;"><div class="ip-cert"><img src="assets/ip/patent-iron-head.png" alt="골프 클럽 헤드 특허증" onclick="openLightbox(this.src)"></div><div><p class="mag-patent" style="margin-top:0;">특허증 · 골프 클럽 헤드 및 그 제조 방법</p><table class="ip-table"><tr><th>특허번호</th><td>제 10-2961654 호</td></tr><tr><th>출원번호</th><td>제 10-2025-0150866 호</td></tr><tr><th>출원일</th><td>2025.10.17</td></tr><tr><th>등록일</th><td>2026.04.30</td></tr><tr><th>발명의 명칭</th><td>골프 클럽 헤드 및 그 제조 방법<br><span style="font-size:12px;color:var(--muted)">Golf club head and manufacturing method thereof</span></td></tr></table><p class="ip-note">CPS 그래핀 7아이언 헤드 설계·제조 기술에 적용된 지식재산권입니다.</p></div></div>`;
+const CPS_IRON={id:'cps-graphene-7i',featured:true,name:'[비거리 전용] 634 CPS 그래핀 그라파이트 7아이언',compose:'#5 · #6 · #7 · #8 · #9 · PW · SW',loft:'24° ~ 55°',shaft:'CPS 그래핀 100% · R / SR / S',desc:'무사시 634 대표 비거리 아이언. JEHOVAH NISSI III · HYPER SPEED TECHNOLOGY 적용. 남녀공용 나노 그래핀 샤프트 7pc 세트.',price:'1,890,000',priceOrig:'2,490,000',hero:'assets/irons/cps-graphene/hero.jpg',detailImg:'assets/irons/cps-graphene/spec-banner.jpg',bullets:['비거리 절대 보장','인생 최고의 비거리','초경량 · 가장 쉬운 아이언'],markings:['JEHOVAH NISSI III','HYPER SPEED TECHNOLOGY','SOLI DEO GLORIA','MUSASHI 634'],features:['CPS(Nano Product System) 100% 그래핀 샤프트 — Self Control Flex','초경량 헤드 + 고탄성 샤프트로 비거리·이지 스윙','페이스 하단 이중 홈 — 볼 스피드·관용성 향상','샤프트 컬러: 오렌지 · 라임 · 실버 그라데이션','Musashi 블랙 그립 · 캐비티백 골드 포인트'],specs:[['품명','무사시 634 CPS 그래핀 그라파이트 7아이언'],['성별','남녀공용'],['구성','#5~SW 7pc 세트'],['재질','금속 + 그래핀'],['특허','제 10-2961654 호'],['제조국','대한민국'],['출시','2025년'],['제조','무사시 634 / ㈜씨엔씨인터내셔널']],clubs:[['클럽','로프트','라이','길이','헤드중량'],['#5','24°','61°','38"','358g'],['#6','27°','61.5°','37.5"','365g'],['#7','31°','62°','37"','372g'],['#8','35°','62.5°','36.5"','379g'],['#9','40°','63°','36"','386g'],['PW','45°','63.5°','35.5"','393g'],['SW','55°','64°','35.25"','400g']],shafts:[['플렉스','중량','토크','CPM','킥포인트'],['R','48g','4.2','245','Low/Mid'],['SR','50g','4.0','255','Low/Mid'],['S','52g','3.8','265','Low/Mid']]};
 const products=[
   {id:'heroeszipangu',no:1,n:'HEROESZIPANGU',cat:'forged',catLabel:'단조·프리미엄',items:'단조 아이언 · 웨지 · 유틸리티',desc:'일본 전통 단조와 현대 기술의 플래그십 라인',origin:'일본',material:'소프트아이언 단조',target:'중·상급자 · 컬렉터',features:['전통 단조 공법 기반 프리미엄 헤드','아트워크·한정 컬렉션 컨셉','의미를 담은 시리즈 네이밍'],specs:[['제조국','일본'],['헤드','단조'],['라인','프리미엄'],['구성','시리즈별 상이 — 문의 안내']],irons:[{id:'forged-set',name:'단조 아이언 풀세트',compose:'#4~PW',loft:'#4 24° ~ PW 48°',shaft:'950S / DG · 문의',desc:'소프트아이언 단조 바디. 컬렉터·상급자용 정통 필.',features:['일본식 단조 공법','얇은 톱라인·클래식 실루엣','시리즈 아트워크 각인'],specs:[['헤드','소프트아이언 단조'],['구성','#4~PW 7pc'],['샤프트','Steel — 강도별'],['특징','프리미엄 · 한정']]},{id:'utility',name:'유틸리티 · 롱아이언',compose:'#3U · #4U',loft:'19° · 22°',shaft:'Graphite / Hybrid',desc:'아이언 세트와 매칭되는 유틸리티.',features:['아이언 라인 디자인 통일','관용성·비거리 보완'],specs:[['분류','유틸리티'],['로프트','19° · 22°'],['구성','단품·세트 연계']]}]},
   {id:'jehovah-nishi',no:2,n:'JEHOVAH NISHI',cat:'iron',catLabel:'아이언·세트',items:'CPS 그래핀 7아이언 · 풀세트',desc:'「여호와는 나의 깃발」— JEHOVAH NISSI III · 비거리 특화 CPS 그래핀 아이언',origin:'대한민국',material:'캐비티백 · CPS 그래핀',target:'비거리·입문~중급 · 남녀공용',features:['JEHOVAH NISSI III · HYPER SPEED TECHNOLOGY','SOLI DEO GLORIA 호젤 각인','CPS 100% 그래핀 샤프트 — Self Control Flex','비거리 절대 보장 컨셉'],specs:[['제조국','대한민국'],['분류','CPS 그래핀 7아이언'],['구성','#5~SW 7pc'],['출시','2025년']],irons:[CPS_IRON,{id:'mid-short',name:'미드·숏 아이언 단품',compose:'#6~SW',loft:'#6 31° ~ SW 55°',shaft:'CPS 그래핀 · R/SR/S',desc:'세트 후반부 단품·보강 구성.',features:['CPS 세트 매칭 샤프트','그린 주변 안정성'],specs:[['구성','단품'],['용도','세트 보강 · 교체']]}]},
@@ -1562,7 +1590,7 @@ function renderIronDetail(){
   const detailGallery=i.detailGallery&&i.detailGallery.length?`<div class="iron-detail-panel reveal on"><div class="iron-detail-gallery">${i.detailGallery.map((src,idx)=>`<img src="${src}" alt="${i.name} 상세 ${idx+1}" onclick="openLightbox(this.src)">`).join('')}</div></div>`:'';
   const clubTable=i.clubs?ironTableHtml(i.clubs,'클럽별 스펙 (로프트 · 라이 · 길이 · 중량)'):'';
   const shaftTable=i.shafts?ironTableHtml(i.shafts,'CPS 그래핀 샤프트 스펙'):'';
-  document.getElementById('idetailRoot').innerHTML=`<div class="pdetail-wrap reveal on"><span class="back" onclick="navGoProduct('${p.id}')">← ${p.n}으로</span><div class="sec-label">${p.n} · IRON${i.featured?' · FLAGSHIP':''}</div><div class="pdetail-top"><div class="pdetail-visual">${hero}</div><div class="pdetail-summary"><h1>${i.name}</h1><div class="pdetail-meta"><span class="pdetail-tag">${i.compose}</span><span class="pdetail-tag">${i.loft}</span><span class="pdetail-tag">${i.shaft}</span></div>${price}${markings}${bullets}<p class="pdetail-lead">${i.desc}</p></div></div><div class="pdetail-grid"><div class="pdetail-box"><h3>Features</h3><ul>${i.features.map(f=>`<li>${f}</li>`).join('')}</ul></div><div class="pdetail-box"><h3>Specs</h3><table class="pdetail-spec">${i.specs.map(s=>`<tr><th>${s[0]}</th><td>${s[1]}</td></tr>`).join('')}</table></div></div><div class="pdetail-spec-stack">${clubTable}${shaftTable}${detailImg}${detailGallery}</div><div class="touch-stack"><button class="btn btn-ghost" onclick="navGoProduct('${p.id}')">브랜드 상세</button><button class="btn btn-ghost" onclick="navGo('products')">라인업</button></div></div>`;
+  document.getElementById('idetailRoot').innerHTML=`<div class="pdetail-wrap reveal on"><span class="back" onclick="navGoProduct('${p.id}')">← ${p.n}으로</span><div class="sec-label">${p.n} · IRON${i.featured?' · FLAGSHIP':''}</div><div class="pdetail-top"><div class="pdetail-visual">${hero}</div><div class="pdetail-summary"><h1>${i.name}</h1><div class="pdetail-meta"><span class="pdetail-tag">${i.compose}</span><span class="pdetail-tag">${i.loft}</span><span class="pdetail-tag">${i.shaft}</span></div>${price}${markings}${bullets}<p class="pdetail-lead">${i.desc}</p></div></div><div class="pdetail-grid"><div class="pdetail-box"><h3>Features</h3><ul>${i.features.map(f=>`<li>${f}</li>`).join('')}</ul></div><div class="pdetail-box"><h3>Specs</h3><table class="pdetail-spec">${i.specs.map(s=>`<tr><th>${s[0]}</th><td>${s[1]}</td></tr>`).join('')}</table></div></div><div class="pdetail-spec-stack">${clubTable}${shaftTable}${detailImg}${detailGallery}</div>${i.featured?IRON_PATENT_HTML:''}<div class="touch-stack"><button class="btn btn-ghost" onclick="navGoProduct('${p.id}')">브랜드 상세</button><button class="btn btn-ghost" onclick="navGo('products')">라인업</button></div></div>`;
 }
 function navGoProduct(id){currentProduct=products.find(p=>p.id===id);if(!currentProduct){navGo('products');return;}renderProductDetail();showPage('pdetail');}
 function navGoIron(pid,iid){
