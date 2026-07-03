@@ -536,7 +536,26 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
 .ng-quick-card h4{font-size:15px;margin-bottom:6px;color:var(--heading);}
 .ng-quick-card p{font-size:13px;color:var(--muted);line-height:1.65;}
 .nigodemo-marquee{border-top:1px solid var(--glass-bd);border-bottom:1px solid var(--glass-bd);background:rgba(15,23,42,.6);}
+.moses-spec-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:20px;}
+.moses-spec-table th,.moses-spec-table td{padding:13px 16px;border:1px solid var(--glass-bd);text-align:left;vertical-align:top;}
+.moses-spec-table th{width:160px;font-family:'IBM Plex Mono';font-size:11px;color:var(--gold-light);background:rgba(212,175,55,.06);font-weight:500;}
+.moses-feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;}
+.moses-feat-card{background:var(--glass);border:1px solid var(--glass-bd);border-radius:14px;padding:22px 24px;}
+.moses-feat-card h4{font-size:15px;color:var(--gold-light);margin-bottom:10px;line-height:1.5;}
+.moses-feat-card p{color:var(--muted);font-size:14px;line-height:1.85;}
+.moses-spec-chips{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 28px;}
+.moses-spec-chips span{font-family:'IBM Plex Mono';font-size:11px;padding:8px 14px;border-radius:8px;border:1px solid rgba(212,175,55,.28);color:var(--gold-light);background:rgba(212,175,55,.05);}
+.moses-theory-list{display:flex;flex-direction:column;gap:16px;margin-top:24px;}
+.moses-theory-item{background:var(--glass);border:1px solid var(--glass-bd);border-radius:14px;padding:22px 24px;}
+.moses-theory-item h4{font-size:16px;color:var(--heading);margin-bottom:10px;line-height:1.45;}
+.moses-theory-item p{color:var(--muted);font-size:14px;line-height:1.85;}
+.moses-theory-item em{color:var(--gold-light);font-style:normal;}
+.moses-closing{margin-top:32px;padding:24px 28px;border-radius:14px;border:1px solid rgba(212,175,55,.25);background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(15,23,42,.4));font-size:15px;line-height:1.9;color:var(--text);}
+.moses-myth{background:rgba(212,175,55,.04);border:1px solid var(--glass-bd);border-radius:14px;padding:22px 24px;margin-top:20px;}
+.moses-myth p{color:var(--muted);font-size:14px;line-height:1.85;margin-top:10px;}
 @media(max-width:900px){
+  .moses-feat-grid{grid-template-columns:1fr;}
+  .moses-spec-table th{width:110px;font-size:10px;}
   .nigodemo-hero{min-height:auto;padding-top:96px;}
   .nigodemo-hero-grid{grid-template-columns:1fr;}
   .nigodemo-hero-visual{order:-1;max-width:360px;margin:0 auto;}
@@ -876,28 +895,29 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
     <div class="wrap">
       <div class="nigodemo-hero-grid reveal">
         <div class="nigodemo-hero-copy">
-          <div class="nigodemo-hero-badge"><i></i>634 · NIGO DEMO · JAPAN FORGED</div>
-          <h1>니고데모<br><span class="grad">드라이버</span></h1>
-          <p class="nigodemo-hero-lead">비거리·방향성의 고민을 한방에 — 634 NICODEMUS 니고데모(Nigo Demo) 라인. 일본 무사시 단조·초고반발 헤드로 필드에서 차이를 만듭니다.</p>
+          <div class="nigodemo-hero-badge"><i></i>MUSASHI634 · THE MIRACLE OF MOSES</div>
+          <h1>모세의 기적<br><span class="grad">드라이버</span></h1>
+          <p class="nigodemo-hero-lead">THE MIRACLE OF MOSES — 전체 무게 250~260g 최경량 드라이버. 495cc 초광폭 헤드 · Musashi634 Graphene 샤프트 · SCF(Self Control Flex). 비거리의 해답은 '속도의 제곱'에 있습니다.</p>
           <div class="nigodemo-hero-chips">
+            <span>495CC</span>
+            <span>GRAPHENE SHAFT</span>
+            <span>180g HEAD</span>
             <span>JEHOVAH NISSI</span>
-            <span>SOLI DEO GLORIA</span>
-            <span>THE MIRACLE OF MOSES</span>
           </div>
           <div class="hero-btns">
             <a class="btn btn-band" href="https://band.us/@634nicodemus" target="_blank" rel="noopener">공식 밴드 가입 →</a>
-            <button class="btn btn-ghost" onclick="document.getElementById('ng-lineup').scrollIntoView({behavior:'smooth'})">제품군 보기</button>
+            <button class="btn btn-ghost" onclick="document.getElementById('ng-spec').scrollIntoView({behavior:'smooth'})">스펙 · 기술 보기</button>
           </div>
           <div class="nigodemo-hero-stats">
-            <div class="ng-stat"><div class="ng-stat-val">924</div><div class="ng-stat-label">밴드 멤버</div></div>
-            <div class="ng-stat"><div class="ng-stat-val">2017</div><div class="ng-stat-label">공식 개설</div></div>
-            <div class="ng-stat"><div class="ng-stat-val">10.5°</div><div class="ng-stat-label">표준 로프트</div></div>
+            <div class="ng-stat"><div class="ng-stat-val">495cc</div><div class="ng-stat-label">헤드 볼륨</div></div>
+            <div class="ng-stat"><div class="ng-stat-val">9~10°</div><div class="ng-stat-label">로프트</div></div>
+            <div class="ng-stat"><div class="ng-stat-val">250~260g</div><div class="ng-stat-label">전체 무게</div></div>
           </div>
         </div>
         <div class="nigodemo-hero-visual">
           <div class="nigodemo-hero-frame">
             <img src="assets/nigodemo/jehovah-nissi-luxury.jpg" alt="JEHOVAH NISSI The Miracle of Moses 드라이버" onclick="openLightbox(this.src)">
-            <div class="nigodemo-hero-caption"><span>FLAGSHIP · NIGODEMO</span><strong>JEHOVAH NISSI Driver</strong></div>
+            <div class="nigodemo-hero-caption"><span>THE MIRACLE OF MOSES</span><strong>MUSASHI634 Driver</strong></div>
           </div>
           <div class="nigodemo-hero-thumbs">
             <img src="assets/nigodemo/jehovah-nissi-studio.jpg" alt="니고데모 드라이버 클로즈업" onclick="openLightbox(this.src)">
@@ -909,37 +929,73 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
   </section>
   <section class="pad" style="padding-top:0;padding-bottom:32px;"><div class="wrap">
     <div class="nigodemo-quick reveal">
-      <div class="ng-quick-card" onclick="document.getElementById('ng-lineup').scrollIntoView({behavior:'smooth'})">
-        <div class="ng-tag">DRIVER</div>
-        <h4>634 NICODEMUS</h4>
-        <p>니고데모 드라이버 · 10.5° · R/SR/S 샤프트</p>
+      <div class="ng-quick-card" onclick="document.getElementById('ng-spec').scrollIntoView({behavior:'smooth'})">
+        <div class="ng-tag">SPEC</div>
+        <h4>Specifications</h4>
+        <p>495cc · 9~10° · Graphene Shaft · SCF</p>
       </div>
-      <div class="ng-quick-card" onclick="document.getElementById('ng-jehovah').scrollIntoView({behavior:'smooth'})">
-        <div class="ng-tag">FLAGSHIP</div>
-        <h4>JEHOVAH NISSI</h4>
-        <p>골드 미러 · SOLI DEO GLORIA 각인</p>
+      <div class="ng-quick-card" onclick="document.getElementById('ng-tech').scrollIntoView({behavior:'smooth'})">
+        <div class="ng-tag">TECHNOLOGY</div>
+        <h4>헤드 · 페이스 기술</h4>
+        <p>최경량화 · VTF · CNC 밀링 · MOI</p>
       </div>
-      <div class="ng-quick-card" onclick="document.getElementById('ng-lineup').scrollIntoView({behavior:'smooth'})">
-        <div class="ng-tag">WEDGE · SET</div>
-        <h4>웨지 · 풀세트</h4>
-        <p>48°~60° 단조 웨지 · 원스톱 세트 상담</p>
+      <div class="ng-quick-card" onclick="document.getElementById('ng-science').scrollIntoView({behavior:'smooth'})">
+        <div class="ng-tag">SCIENCE</div>
+        <h4>4가지 과학 이론</h4>
+        <p>운동에너지 · 500cc · 그래핀 · 생체역학</p>
       </div>
     </div>
   </div></section>
   <div class="marquee nigodemo-marquee"><div class="track">
-    <span><i class="wh">NIGODEMO</i>&nbsp;<b>·</b>&nbsp;<i class="hi">634 NICODEMUS</i>&nbsp;<b>·</b>&nbsp;<i class="wh">JEHOVAH NISSI</i>&nbsp;<b>·</b>&nbsp;<i class="hi">SOLI DEO GLORIA</i>&nbsp;<b>·</b>&nbsp;<i class="wh">HYPER SPEED</i>&nbsp;<b>·</b>&nbsp;<i class="hi">OFFICIAL BAND 924</i>&nbsp;<b>·</b>&nbsp;</span>
-    <span><i class="wh">NIGODEMO</i>&nbsp;<b>·</b>&nbsp;<i class="hi">634 NICODEMUS</i>&nbsp;<b>·</b>&nbsp;<i class="wh">JEHOVAH NISSI</i>&nbsp;<b>·</b>&nbsp;<i class="hi">SOLI DEO GLORIA</i>&nbsp;<b>·</b>&nbsp;<i class="wh">HYPER SPEED</i>&nbsp;<b>·</b>&nbsp;<i class="hi">OFFICIAL BAND 924</i>&nbsp;<b>·</b>&nbsp;</span>
+    <span><i class="wh">THE MIRACLE OF MOSES</i>&nbsp;<b>·</b>&nbsp;<i class="hi">495CC</i>&nbsp;<b>·</b>&nbsp;<i class="wh">GRAPHENE SHAFT</i>&nbsp;<b>·</b>&nbsp;<i class="hi">250~260g</i>&nbsp;<b>·</b>&nbsp;<i class="wh">SCF</i>&nbsp;<b>·</b>&nbsp;<i class="hi">MUSASHI634</i>&nbsp;<b>·</b>&nbsp;</span>
+    <span><i class="wh">THE MIRACLE OF MOSES</i>&nbsp;<b>·</b>&nbsp;<i class="hi">495CC</i>&nbsp;<b>·</b>&nbsp;<i class="wh">GRAPHENE SHAFT</i>&nbsp;<b>·</b>&nbsp;<i class="hi">250~260g</i>&nbsp;<b>·</b>&nbsp;<i class="wh">SCF</i>&nbsp;<b>·</b>&nbsp;<i class="hi">MUSASHI634</i>&nbsp;<b>·</b>&nbsp;</span>
   </div></div>
-  <section class="pad"><div class="wrap reveal">
-    <div class="sec-label">Philosophy</div>
-    <h2>비거리야, <span class="grad">물러갈라</span></h2>
-    <p style="color:var(--muted);max-width:680px;line-height:1.85;margin-top:12px;">공식 밴드 리더 MUSASHI CPS IRON의 슬로건. 니고데모 드라이버는 비거리와 방향성을 동시에 잡는 초고반발 헤드 설계로, 아마추어·실력 골퍼의 고민을 해결하는 대표 모델입니다.</p>
-    <blockquote class="quote-box">내게 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라. <span style="color:var(--gold-light);font-family:'IBM Plex Mono';font-size:12px;">— 빌립보서 4:13</span></blockquote>
+  <section class="pad" id="ng-spec"><div class="wrap reveal">
+    <div class="sec-label">Specifications</div>
+    <h2>모세의 기적 <span class="grad">드라이버 스펙</span></h2>
+    <div class="table-scroll">
+      <table class="moses-spec-table">
+        <tr><th>BRAND</th><td>MUSASHI634</td></tr>
+        <tr><th>MODEL</th><td><strong style="color:var(--heading)">THE MIRACLE OF MOSES</strong></td></tr>
+        <tr><th>VOLUME</th><td>495cc</td></tr>
+        <tr><th>LOFT (DEGREE)</th><td>9~10°</td></tr>
+        <tr><th>SHAFT</th><td>Musashi634 Graphene Shaft</td></tr>
+        <tr><th>SHAFT STRENGTH</th><td>SCF [SELF CONTROL FLEX]</td></tr>
+        <tr><th>COUNTRY OF ORIGIN</th><td>HEAD / CHINA · SHAFT / KOREA · GRIP / KOREA &amp; CHINA</td></tr>
+        <tr><th>MANUFACTURER</th><td>INTERNATIONAL MUSASHI634</td></tr>
+        <tr><th>전체 무게</th><td>250g ~ 260g (최경량 최적화)</td></tr>
+        <tr><th>헤드 무게</th><td>180g대 초중반</td></tr>
+        <tr><th>샤프트 중량</th><td>30g ~ 55g (그래핀 샤프트)</td></tr>
+        <tr><th>그립</th><td>25g ~ 40g</td></tr>
+      </table>
+    </div>
+  </div></section>
+  <section class="pad" id="ng-tech"><div class="wrap reveal">
+    <div class="sec-label">Technology</div>
+    <h2>헤드 · 페이스 <span class="grad">핵심 기술</span></h2>
+    <div class="moses-feat-grid">
+      <div class="moses-feat-card">
+        <h4>헤드 무게 최경량화 실현</h4>
+        <p>과학적으로 크라운 부분의 무게를 한계치까지 줄입니다. 확보한 잉여 중량을 솔의 가장 낮고 깊은 곳으로 재배치합니다. 무게 중심이 페이스에서 멀어지고 바닥으로 내려갈수록, 임팩트 시 기어 효과(Gear Effect)로 불필요한 백스핀이 억제되어 공을 쉽게 띄울 수 있게 설계했습니다.</p>
+      </div>
+      <div class="moses-feat-card">
+        <h4>반발 면적 확대를 위한 페이스 정밀가공</h4>
+        <p>페이스 VTF 설계(가변두께 페이스). 페이스 뒷면을 정밀한 CNC 밀링 패턴으로 가공해 미세한 두께 편차를 잡아내어, 유효 타구 면적이 넓어져 조금 빗맞아도 비거리를 보장합니다.</p>
+      </div>
+      <div class="moses-feat-card">
+        <h4>고비중 소재의 전략적 배치</h4>
+        <p>토우와 힐 쪽에 무게추를 배분해 관성 모멘트(MOI)를 높입니다. 스윙을 최대한 편하게 하면서 방향성을 확보합니다.</p>
+      </div>
+      <div class="moses-feat-card">
+        <h4>심리적 안정감 및 스피드</h4>
+        <p>어드레스 시 투영 면적을 넓게 설계해 시각적으로 커 보이게 만들어 안정감을 줍니다. 스윙 궤도에서 공기 저항을 최소화합니다.</p>
+      </div>
+    </div>
   </div></section>
   <section class="pad" id="ng-jehovah"><div class="wrap reveal">
     <div class="sec-label">JEHOVAH NISSI</div>
     <h2>The Miracle of <span class="grad">Moses</span></h2>
-    <p style="color:var(--muted);max-width:720px;line-height:1.85;margin-top:12px;">JEHOVAH NISSI(「여호와는 나의 깃발」) 프리미엄 드라이버. 골드 미러 솔 · SOLI DEO GLORIA · The Miracle of Moses 각인. 니고데모 라인과 함께 무사시 634의 대표 드라이버 컬렉션입니다.</p>
+    <p style="color:var(--muted);max-width:720px;line-height:1.85;margin-top:12px;">JEHOVAH NISSI(「여호와는 나의 깃발」) 프리미엄 드라이버. 골드 미러 솔 · SOLI DEO GLORIA · The Miracle of Moses 각인.</p>
     <div class="ng-detail-grid">
       <div class="ng-detail-copy">
         <div class="ng-markings">
@@ -948,24 +1004,59 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
           <span>THE LORD IS MY BANNER</span>
           <span>THE MIRACLE OF MOSES</span>
         </div>
-        <p>헤드 하단 골드·블랙 대비와 호젤 각인으로 시리즈 철학을 담았습니다. 골드 미러 솔과 블랙 바디의 대비가 필드에서도 시인성을 높입니다.</p>
         <div class="ng-detail-meaning">
           <strong>여호와는 나의 깃발 (JEHOVAH NISSI)</strong>
           <span>출애굽기 17:15 — 이스라엘이 아말렉과의 전투에서 승리한 후 모세가 세운 제단 이름. 「승리의 깃발」이라는 뜻을 담아, 드라이버의 방향성·비거리 철학과 연결됩니다.</span>
         </div>
+        <blockquote class="quote-box" style="margin-top:20px;margin-bottom:0;">내게 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라. <span style="color:var(--gold-light);font-family:'IBM Plex Mono';font-size:12px;">— 빌립보서 4:13</span></blockquote>
       </div>
       <div class="ng-detail-panel">
-        <h3>Engraving · Spec</h3>
+        <h3>Brand · Engraving</h3>
         <table class="ng-detail-spec">
-          <tr><th>시리즈</th><td>JEHOVAH NISSI III · HYPER SPEED TECHNOLOGY</td></tr>
+          <tr><th>브랜드</th><td>MUSASHI634</td></tr>
+          <tr><th>모델</th><td>THE MIRACLE OF MOSES</td></tr>
           <tr><th>각인</th><td>SOLI DEO GLORIA · The Miracle of Moses</td></tr>
           <tr><th>솔</th><td>골드 미러 · 초고반발</td></tr>
-          <tr><th>로프트</th><td>10.5° (표준) · 9° · 10° (니고데모2)</td></tr>
-          <tr><th>샤프트</th><td>R · SR · S — 문의 안내</td></tr>
-          <tr><th>제조</th><td>무사시634 · 일본</td></tr>
+          <tr><th>슬로건</th><td>비거리야, 물러갈라</td></tr>
         </table>
       </div>
     </div>
+  </div></section>
+  <section class="pad" id="ng-science"><div class="wrap reveal">
+    <div class="sec-label">Core Points</div>
+    <h2>무사시634 모세의 기적 <span class="grad">핵심 포인트</span></h2>
+    <p style="color:var(--muted);max-width:720px;line-height:1.85;margin-top:12px;">전체 무게 250g~260g의 최경량으로 최적화된 드라이버. 골프 장비는 공산품이 아니라 <strong style="color:var(--text)">진정한 과학</strong>입니다.</p>
+    <div class="moses-spec-chips">
+      <span>① 헤드 180g대</span>
+      <span>② 볼륨 495cc</span>
+      <span>③ 샤프트 30~55g 그래핀</span>
+      <span>④ 그립 25~40g</span>
+    </div>
+    <div class="moses-myth">
+      <strong style="color:var(--heading)">[아마추어 골퍼들이 가진 잘못된 편견]</strong>
+      <p>일반적인 피팅 이론은 F(힘) = m(질량) × a(속도)의 제곱입니다. 무거운 헤드가 강한 힘을 낸다는 것은 「골퍼가 그 무게를 완벽히 통제하고 최고의 스피드로 휘두를 수 있다」는 전제하에만 성립합니다. 근력과 유연성이 떨어지는 대다수 아마추어·시니어 골퍼에게 무거운 클럽은 스피드를 갉아먹는 족쇄가 됩니다.</p>
+    </div>
+    <h3 style="font-size:18px;margin:36px 0 8px;">4가지 핵심 <span class="grad">과학 이론</span></h3>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:8px;">MUSASHI634 THE MIRACLE OF MOSES 드라이버 기준</p>
+    <div class="moses-theory-list">
+      <div class="moses-theory-item">
+        <h4>1. 비거리의 절대 법칙 — 운동 에너지 공식 (Ek = ½mv²)</h4>
+        <p>골프 스윙에서 공에 전달되는 파워는 단순히 힘(F)이 아니라 <em>운동 에너지(Ek)</em>입니다. 질량(m)은 에너지에 비례하지만, 속도(v, 헤드 스피드)는 <em>제곱</em>으로 비례합니다. 무게를 10% 줄여 헤드 스피드가 10% 늘어난다면, 비거리를 결정하는 에너지는 기하급수적으로 증가합니다. 근력이 부족한 골퍼가 가벼운 클럽으로 잃어버린 헤드 스피드를 되찾는 순간, 스윙 에너지는 무거운 클럽을 억지로 휘두를 때보다 훨씬 커집니다.</p>
+      </div>
+      <div class="moses-theory-item">
+        <h4>2. 495cc 초광폭 헤드 — 가벼우면 날린다는 편견을 깨다</h4>
+        <p>180g대의 가벼운 헤드는 자칫 MOI가 떨어져 방향성을 잃을 수 있습니다. 이 클럽은 495cc 초대형 체적으로 이 문제를 해결했습니다. <em>초경량 180g 헤드의 에너지를 495cc 거대한 체적 안에 최적 밸런스로 배분</em>했습니다. 스위트 스팟이 극대화되고, 중심을 벗어난 타격에서도 헤드가 뒤틀리지 않아 슬라이스를 잡고 직진성을 보장합니다.</p>
+      </div>
+      <div class="moses-theory-item">
+        <h4>3. 그래핀(Graphene) 샤프트 — 방향성 제어</h4>
+        <p>30g~40g대 초경량 샤프트의 약점은 임팩트 순간의 강한 휨과 뒤틀림(Torque)입니다. 강철보다 200배 강한 인장 강도의 그래핀으로 극복했습니다. <em>「초경량의 스피드에 강철의 뼈대를 입혔습니다.」</em> 스윙 스피드는 극대화하면서, 그래핀 구조가 임팩트 충격을 버텨 페이스가 열리거나 닫히는 것을 방어합니다.</p>
+      </div>
+      <div class="moses-theory-item">
+        <h4>4. 생체역학적 황금 밸런스</h4>
+        <p>초경량 풀 라인업 조립은 골퍼의 신체적 부담을 제로(0)에 가깝게 만듭니다. <em>「스윙이 편안해지면, 몸통 회전이 살아나고 클럽 페이스는 정확히 공을 타격합니다.」</em> 캐스팅(풀림 현상)이 사라지고 자연스러운 헤드 턴으로 정타율이 상승합니다. 무거워야 멀리 간다는 옛 물리 법칙을 버리십시오. 비거리의 해답은 속도의 제곱에 있습니다.</p>
+      </div>
+    </div>
+    <div class="moses-closing">≪ 495cc의 압도적인 관용성, 첨단 그래핀 소재가 완성한 30g대 초경량 샤프트가 당신의 잃어버린 스윙 스피드를 폭발시켜, 시니어·아마추어도 상상 이상의 200m 스트레이트 비거리를 완성합니다. ≫</div>
   </div></section>
   <section class="pad"><div class="wrap reveal">
     <div class="sec-label">Trademark</div>
@@ -993,7 +1084,12 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
     <p style="color:var(--muted);margin-top:12px;line-height:1.75;">공식 밴드 기준 주요 모델 (구성·재고는 문의 안내)</p>
     <div class="nigodemo-grid">
       <div class="nigodemo-card">
-        <div class="ng-tag">FLAGSHIP</div>
+        <div class="ng-tag">FLAGSHIP · MOSES</div>
+        <h4>THE MIRACLE OF MOSES</h4>
+        <p>모세의 기적 드라이버 · 495cc · 9~10° · 250~260g · Musashi634 Graphene Shaft · SCF</p>
+      </div>
+      <div class="nigodemo-card">
+        <div class="ng-tag">NICODEMUS</div>
         <h4>634 NICODEMUS 니고데모 드라이버</h4>
         <p>남성용 · 오른손 · 2017 정품 라인. 로프트 10.5°, 길이 45인치(114cm). R / SR / S 강도별 샤프트 구성.</p>
       </div>
@@ -1024,16 +1120,16 @@ footer{border-top:1px solid var(--glass-bd);padding:64px 0 32px;position:relativ
       </div>
     </div>
     <div class="nigodemo-spec-wrap reveal">
-      <h3 style="font-size:18px;margin-bottom:4px;">니고데모 드라이버 <span class="grad">표준 스펙</span></h3>
-      <p style="color:var(--muted);font-size:13px;margin-bottom:8px;">634 NICODEMUS 니고데모 드라이버 (정품) · 등록 2017.02</p>
+      <h3 style="font-size:18px;margin-bottom:4px;">THE MIRACLE OF MOSES <span class="grad">표준 스펙</span></h3>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:8px;">모세의 기적 드라이버 · MUSASHI634 · INTERNATIONAL MUSASHI634</p>
       <table class="nigodemo-spec-table">
-        <tr><th>분류</th><td>드라이버 · 남성용 · 오른손</td></tr>
-        <tr><th>로프트</th><td>10.5° (표준) / 니고데모2: 9° · 10°</td></tr>
-        <tr><th>길이</th><td>45인치 (114cm)</td></tr>
-        <tr><th>샤프트 R</th><td>중량 49g · 토크 4.5°</td></tr>
-        <tr><th>샤프트 SR</th><td>중량 53g · 토크 4.2°</td></tr>
-        <tr><th>샤프트 S</th><td>중량 55g · 토크 4.2°</td></tr>
-        <tr><th>제조</th><td>무사시634 · 일본</td></tr>
+        <tr><th>모델</th><td>THE MIRACLE OF MOSES</td></tr>
+        <tr><th>볼륨</th><td>495cc</td></tr>
+        <tr><th>로프트</th><td>9° ~ 10°</td></tr>
+        <tr><th>전체 무게</th><td>250g ~ 260g</td></tr>
+        <tr><th>샤프트</th><td>Musashi634 Graphene Shaft · SCF [SELF CONTROL FLEX]</td></tr>
+        <tr><th>원산지</th><td>HEAD/CHINA · SHAFT/KOREA · GRIP/KOREA&amp;CHINA</td></tr>
+        <tr><th>제조</th><td>INTERNATIONAL MUSASHI634</td></tr>
       </table>
     </div>
   </div></section>
@@ -1668,7 +1764,7 @@ function renderSeriesWall(){
 }
 const FLAGSHIP=[
   {tag:'IRON · FLAGSHIP',title:'634 CPS 그래핀 7아이언',desc:'비거리 전용 · JEHOVAH NISSI III · #5~SW',img:'assets/irons/cps-graphene/hero.jpg',onclick:"navGoIron('musashi-634','cps-graphene-7i')"},
-  {tag:'DRIVER · NIGODEMO',title:'634 NICODEMUS 니고데모',desc:'JEHOVAH NISSI · 초고반발 드라이버',img:'assets/nigodemo/jehovah-nissi-course.jpg',onclick:"navGo('nigodemo')"},
+  {tag:'DRIVER · MOSES',title:'THE MIRACLE OF MOSES',desc:'495cc · 250~260g · Graphene Shaft · SCF',img:'assets/nigodemo/jehovah-nissi-course.jpg',onclick:"navGo('nigodemo')"},
   {tag:'FORGED · PREMIUM',title:'HEROESZIPANGU',desc:'일본식 단조 · 프리미엄 아이언',img:'assets/series-showcase.jpg',onclick:"navGoProduct('heroeszipangu')"}
 ];
 function renderFlagship(){
