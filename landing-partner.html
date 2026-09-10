@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>MUSASHI · 파트너 상담</title>
+<meta name="description" content="스크린으로 모으고, 구조로 법니다. 무사시 스크린 파크골프 파트너 상담.">
+<link rel="icon" href="assets/musashi-logo-light.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@400;600&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0B1220;
+  --gold: #C9A227;
+  --gold-soft: #E2C56A;
+  --text: #F4F1EA;
+  --muted: rgba(244, 241, 234, 0.7);
+  --line: rgba(244, 241, 234, 0.14);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Noto Sans KR", "Sora", sans-serif;
+  color: var(--text);
+  background: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px clamp(20px, 4vw, 40px) clamp(48px, 8vh, 72px);
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(201, 162, 39, 0.1), transparent 55%),
+    var(--ink);
+}
+
+.logo {
+  position: absolute;
+  top: 28px;
+  left: clamp(20px, 4vw, 40px);
+}
+.logo img { width: 96px; height: auto; display: block; }
+
+.hero-copy { width: min(560px, 100%); }
+.hero-brand {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(48px, 11vw, 80px);
+  line-height: .95;
+  letter-spacing: -.03em;
+  margin-bottom: 20px;
+  animation: up .9s var(--ease) both;
+}
+.hero-brand em {
+  display: block;
+  font-size: .38em;
+  color: var(--gold-soft);
+  margin-top: 6px;
+  font-style: italic;
+}
+.hero h1 {
+  font-family: "Sora", "Noto Sans KR", sans-serif;
+  font-size: clamp(22px, 3.8vw, 32px);
+  font-weight: 600;
+  letter-spacing: -.02em;
+  margin-bottom: 12px;
+  animation: up .9s var(--ease) .12s both;
+}
+.hero p {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 28ch;
+  margin-bottom: 28px;
+  animation: up .9s var(--ease) .22s both;
+}
+.hero .btn {
+  animation: up .9s var(--ease) .32s both;
+}
+@keyframes up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 22px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  background: var(--gold);
+  color: var(--ink);
+  transition: background .3s var(--ease), transform .3s var(--ease);
+}
+.btn:hover { background: var(--gold-soft); transform: translateY(-1px); }
+.btn-block { width: 100%; }
+
+.points {
+  padding: clamp(64px, 10vw, 96px) clamp(20px, 4vw, 40px);
+  border-top: 1px solid var(--line);
+}
+.points-inner { width: min(560px, 100%); margin: 0 auto; }
+.points h2 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.2;
+  margin-bottom: 28px;
+  letter-spacing: -.02em;
+}
+.points ul { list-style: none; }
+.points li {
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 15px;
+}
+.points li:last-child { border-bottom: 1px solid var(--line); }
+.points strong {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.cta {
+  padding: 0 clamp(20px, 4vw, 40px) clamp(72px, 12vw, 100px);
+}
+.cta-inner {
+  width: min(560px, 100%);
+  margin: 0 auto;
+  padding-top: 8px;
+}
+.cta h2 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: 8px;
+}
+.cta .sub {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.form { display: grid; gap: 12px; }
+.form label {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: .06em;
+  color: var(--muted);
+}
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 14px;
+  outline: none;
+}
+.form input:focus,
+.form select:focus,
+.form textarea:focus { border-color: var(--gold); }
+.form select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--gold) 50%),
+    linear-gradient(135deg, var(--gold) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+.form textarea { min-height: 88px; resize: vertical; }
+.form-note { font-size: 13px; color: var(--muted); }
+.form-note a { color: var(--gold-soft); }
+.done { display: none; padding: 20px 0; }
+.done.show { display: block; }
+.done h3 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.done p { color: var(--muted); font-size: 15px; }
+
+.foot {
+  padding: 20px clamp(20px, 4vw, 40px) 36px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+.foot a { color: var(--gold-soft); }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <a class="logo" href="#top" id="top"><img src="assets/musashi-logo-light.png" alt="MUSASHI" width="96" height="32"></a>
+  <div class="hero-copy">
+    <div class="hero-brand">MUSASHI<em>Partner</em></div>
+    <h1>스크린으로 모으고,<br>구조로 법니다</h1>
+    <p>점주 수익 · 시니어 혜택 · 설비 환매까지. 무사시와 같이 그립니다.</p>
+    <a class="btn" href="#consult">상담 신청</a>
+  </div>
+</section>
+
+<section class="points">
+  <div class="points-inner">
+    <h2>세 가지만</h2>
+    <ul>
+      <li>
+        <strong>이용 + 단체 + 무사시</strong>
+        게임만으로는 부족합니다. 고정 고객과 혜택이 붙어야 합니다.
+      </li>
+      <li>
+        <strong>시니어는 초대권</strong>
+        앱 없이, 투어·단체 데이로 모읍니다.
+      </li>
+      <li>
+        <strong>안 되면 환매</strong>
+        렌탈로 시작하고, 어려우면 장비를 다시 삽니다.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta" id="consult">
+  <div class="cta-inner">
+    <h2>상담</h2>
+    <p class="sub">이름과 번호만 남겨 주세요.</p>
+    <form class="form" id="partnerForm">
+      <label>이름
+        <input name="name" type="text" required autocomplete="name" placeholder="홍길동">
+      </label>
+      <label>연락처
+        <input name="phone" type="tel" required autocomplete="tel" placeholder="010-0000-0000">
+      </label>
+      <label>관심
+        <select name="type">
+          <option value="점주">점주·가맹</option>
+          <option value="단체">봉사단체</option>
+          <option value="기타">기타</option>
+        </select>
+      </label>
+      <label>메모 (선택)
+        <textarea name="memo" placeholder="지역, 문의 내용"></textarea>
+      </label>
+      <button class="btn btn-block" type="submit">보내기</button>
+      <p class="form-note"><a href="mailto:paullew@hanmail.net">paullew@hanmail.net</a></p>
+    </form>
+    <div class="done" id="formDone">
+      <h3>접수되었습니다</h3>
+      <p>곧 연락드리겠습니다.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <a href="index.html">공식 사이트</a>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById("partnerForm");
+  var done = document.getElementById("formDone");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    var d = new FormData(form);
+    var body = encodeURIComponent(
+      "[무사시 파트너 상담]\n이름: " + d.get("name") +
+      "\n연락처: " + d.get("phone") +
+      "\n관심: " + d.get("type") +
+      "\n메모: " + (d.get("memo") || "")
+    );
+    window.location.href = "mailto:paullew@hanmail.net?subject=" +
+      encodeURIComponent("무사시 파트너 상담") + "&body=" + body;
+    form.style.display = "none";
+    done.classList.add("show");
+  });
+})();
+</script>
+</body>
+</html>
