@@ -726,8 +726,24 @@ body:not(.trinity-theme):not(.magnificat-theme){--light:#F4F1EA;--light-text:#1A
 .mk-light .band-cta-banner h3{color:var(--light-text);}
 .mk-light .band-cta-banner p{color:var(--light-muted);}
 .mk-home-sub{padding:var(--section-y) 0;}
-@media(max-width:1024px){.mk-cat-grid,.mk-shop-block .shop-grid{grid-template-columns:repeat(2,1fr);}.mk-values-grid{grid-template-columns:repeat(2,1fr);}.mk-val-item:nth-child(2){border-right:none;}.mk-fitting-layout{grid-template-columns:1fr;}.mk-fit-steps{flex-wrap:wrap;}.mk-fit-arrow{display:none;}.mk-fit-step{min-width:calc(50% - 8px);}.nav-util{display:none;}}
-@media(max-width:640px){.mk-cat-grid,.mk-shop-block .shop-grid,.mk-values-grid{grid-template-columns:1fr;}.mk-val-item{border-right:none;border-bottom:1px solid rgba(26,21,16,.08);padding:16px 0;}.mk-val-item:last-child{border-bottom:none;}.mk-hero h1{font-size:28px;}.mk-scroll-side{display:none;}.mk-hero-arrows{display:none;}.mk-fit-step{min-width:100%;}.mk-shop-block .shop-toolbar{flex-direction:column;align-items:flex-start;}}
+.shop-best-block{margin-bottom:28px;padding:22px 22px 20px;background:#fff;border:1px solid rgba(184,150,46,.25);border-radius:14px;box-shadow:0 10px 32px rgba(26,21,16,.06);}
+.shop-best-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap;}
+.shop-best-head h3{font-size:18px;margin:0;color:var(--light-text);}
+.shop-best-head span{font-family:'IBM Plex Mono';font-size:11px;color:var(--gold-dim);letter-spacing:.06em;}
+.shop-best-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.shop-best-grid .shop-card{border-color:rgba(184,150,46,.2);}
+.cart-fab{position:fixed;right:clamp(16px,3vw,24px);bottom:clamp(18px,3vw,28px);z-index:180;display:flex;align-items:center;gap:8px;padding:14px 20px 14px 16px;border-radius:100px;background:var(--gold);color:#1A1510;border:none;box-shadow:0 12px 40px rgba(212,175,55,.42),0 0 0 1px rgba(255,255,255,.15) inset;cursor:pointer;font-weight:700;font-size:14px;font-family:'Sora',sans-serif;transition:transform .25s,box-shadow .25s,opacity .25s;}
+.cart-fab:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 18px 48px rgba(212,175,55,.52);}
+.cart-fab:active{transform:translateY(-1px);}
+.cart-fab.hidden{opacity:0;visibility:hidden;pointer-events:none;}
+.cart-fab-icon{font-size:18px;line-height:1;}
+.cart-fab-badge{min-width:22px;height:22px;padding:0 6px;border-radius:100px;background:#1A1510;color:var(--gold);font-size:11px;font-family:'IBM Plex Mono';font-weight:700;display:inline-flex;align-items:center;justify-content:center;}
+.cart-fab.pulse{animation:cartFabPulse .45s ease;}
+@keyframes cartFabPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+@media(max-width:1024px){.mk-cat-grid,.mk-shop-block .shop-grid{grid-template-columns:repeat(2,1fr);}.shop-best-grid{grid-template-columns:repeat(3,1fr);}.mk-values-grid{grid-template-columns:repeat(2,1fr);}.mk-val-item:nth-child(2){border-right:none;}.mk-fitting-layout{grid-template-columns:1fr;}.mk-fit-steps{flex-wrap:wrap;}.mk-fit-arrow{display:none;}.mk-fit-step{min-width:calc(50% - 8px);}.nav-util{display:none;}}
+@media(max-width:768px){.shop-best-grid{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:6px;scrollbar-width:none;}.shop-best-grid::-webkit-scrollbar{display:none;}.shop-best-grid .shop-card{min-width:min(74vw,280px);flex-shrink:0;scroll-snap-align:start;}}
+@media(max-width:640px){.mk-cat-grid,.mk-shop-block .shop-grid{grid-template-columns:repeat(2,1fr);gap:12px;}.mk-shop-block .shop-body{padding:12px 12px 14px;}.mk-shop-block .shop-body h3{font-size:13px;line-height:1.4;}.mk-shop-block .shop-body p{font-size:11px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.mk-shop-block .shop-card .shop-price{font-size:16px;}.mk-shop-block .shop-actions .btn{padding:9px 6px;font-size:10px;min-height:36px;}.mk-cat-grid{grid-template-columns:repeat(2,1fr);gap:12px;}.mk-cat-body h3{font-size:15px;}.mk-values-grid{grid-template-columns:1fr;}.mk-val-item{border-right:none;border-bottom:1px solid rgba(26,21,16,.08);padding:16px 0;}.mk-val-item:last-child{border-bottom:none;}.mk-hero h1{font-size:28px;}.mk-scroll-side{display:none;}.mk-hero-arrows{display:none;}.mk-fit-step{min-width:100%;}.mk-shop-block .shop-toolbar{flex-direction:column;align-items:flex-start;}.cart-fab-label{display:none;}.cart-fab{padding:14px 16px;border-radius:50%;}}
+@media(max-width:380px){.mk-shop-block .shop-grid,.mk-cat-grid{grid-template-columns:1fr;}}
 /* —— Shop mall —— */
 .shop-trust{background:var(--surface);border-bottom:1px solid var(--glass-bd);padding:14px 0;}
 .shop-trust-inner{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 24px;font-size:12px;color:var(--muted);}
@@ -993,6 +1009,10 @@ body:not(.trinity-theme):not(.magnificat-theme){--light:#F4F1EA;--light-text:#1A
       <span class="shop-count" id="shopCountHome"></span>
     </div>
     <div class="mk-shop-sticky reveal"><div class="shop-chips" id="shopChipsHome"></div></div>
+    <div class="shop-best-block reveal" id="shopBestBlock">
+      <div class="shop-best-head"><h3>BEST · 추천 상품</h3><span>인기 · 특가 · 신상</span></div>
+      <div class="shop-best-grid" id="shopBestHome"></div>
+    </div>
     <div class="shop-grid reveal" id="shopGridHome"></div>
   </div></section>
 
@@ -1799,6 +1819,7 @@ body:not(.trinity-theme):not(.magnificat-theme){--light:#F4F1EA;--light-text:#1A
   <div class="copy">개인정보관리책임자 이현석 · © 주식회사 인터네셔널무사시634</div>
 </div></footer>
 
+<button type="button" class="cart-fab" id="cartFab" onclick="openCart()" aria-label="장바구니"><span class="cart-fab-icon" aria-hidden="true">🛒</span><span class="cart-fab-label">장바구니</span><span class="cart-fab-badge" id="cartFabBadge">0</span></button>
 <div class="cart-backdrop" id="cartBackdrop" onclick="closeCart()"></div>
 <div class="cart-drawer" id="cartDrawer" aria-label="장바구니">
   <div class="cart-head"><h3>장바구니</h3><button class="cart-close" type="button" onclick="closeCart()" aria-label="닫기">&times;</button></div>
@@ -1837,7 +1858,9 @@ let currentProduct=null;
 let currentIron=null;
 const SHOP_CAT_LABELS={all:'전체 상품',driver:'드라이버',iron:'아이언',wedge:'웨지',putter:'퍼터',shoes:'골프화'};
 const SHOP_CAT_ORDER=['all','driver','iron','wedge','putter','shoes'];
+const SHOP_BEST_IDS=['moses-driver','cps-iron','magnificat'];
 let shopFilt='all';
+let cartFabPulseTimer;
 const SHOP_ITEMS=[
   {id:'moses-driver',cat:'driver',catLabel:'DRIVER',name:'THE MIRACLE OF MOSES 드라이버',short:'495cc · 250~260g · Graphene · SCF',price:null,priceText:'가격 문의',img:'assets/nigodemo/jehovah-nissi-luxury.jpg',badge:'BEST',link:'nigodemo'},
   {id:'cps-iron',cat:'iron',catLabel:'IRON',name:'CPS 그래핀 7아이언 세트',short:'#5~SW · JEHOVAH NISSI III · 특허',price:1890000,priceOrig:2490000,img:'assets/irons/cps-graphene/hero.jpg',badge:'특허',badgeClass:'patent',link:'iron',pid:'musashi-634',iid:'cps-graphene-7i'},
@@ -1854,11 +1877,13 @@ function getShopItem(id){return SHOP_ITEMS.find(s=>s.id===id);}
 function formatWon(n){return'₩ '+n.toLocaleString('ko-KR');}
 function loadCart(){try{return JSON.parse(localStorage.getItem(CART_KEY)||'[]');}catch(e){return[];}}
 function saveCart(c){localStorage.setItem(CART_KEY,JSON.stringify(c));updateCartUI();}
-function addToCart(id){const item=getShopItem(id);if(!item)return;const c=loadCart();if(!c.find(x=>x.id===id))c.push({id:item.id,name:item.name,price:item.price,priceText:item.priceText||null});saveCart(c);toast(item.name+' — 장바구니에 담았습니다');}
+function pulseCartFab(){const fab=document.getElementById('cartFab');if(!fab)return;fab.classList.remove('pulse');void fab.offsetWidth;fab.classList.add('pulse');clearTimeout(cartFabPulseTimer);cartFabPulseTimer=setTimeout(()=>fab.classList.remove('pulse'),500);}
+function addToCart(id){const item=getShopItem(id);if(!item)return;const c=loadCart();if(!c.find(x=>x.id===id))c.push({id:item.id,name:item.name,price:item.price,priceText:item.priceText||null});saveCart(c);pulseCartFab();toast(item.name+' — 장바구니에 담았습니다');}
 function removeFromCart(id){saveCart(loadCart().filter(x=>x.id!==id));}
 function updateCartUI(){
-  const c=loadCart(),badge=document.getElementById('cartBadge');
+  const c=loadCart(),badge=document.getElementById('cartBadge'),fabBadge=document.getElementById('cartFabBadge');
   if(badge)badge.textContent=c.length;
+  if(fabBadge)fabBadge.textContent=c.length;
   const list=document.getElementById('cartList'),totalEl=document.getElementById('cartTotal');
   if(!list)return;
   if(!c.length){list.innerHTML='<div class="cart-empty">장바구니가 비어 있습니다.<br>상품을 담고 구매 문의해 주세요.</div>';if(totalEl)totalEl.textContent='₩ 0';return;}
@@ -1870,8 +1895,14 @@ function updateCartUI(){
   }).join('');
   if(totalEl)totalEl.textContent=sum?formatWon(sum):'문의';
 }
-function openCart(){closeMenu();document.getElementById('cartDrawer').classList.add('open');document.getElementById('cartBackdrop').classList.add('open');document.body.classList.add('menu-open');updateCartUI();}
-function closeCart(){document.getElementById('cartDrawer').classList.remove('open');document.getElementById('cartBackdrop').classList.remove('open');document.body.classList.remove('menu-open');}
+function syncCartFab(){
+  const fab=document.getElementById('cartFab'),home=document.getElementById('page-home');
+  if(!fab)return;
+  const drawerOpen=document.getElementById('cartDrawer')?.classList.contains('open');
+  fab.classList.toggle('hidden',!!drawerOpen||!(home&&home.classList.contains('active')));
+}
+function openCart(){closeMenu();document.getElementById('cartDrawer').classList.add('open');document.getElementById('cartBackdrop').classList.add('open');document.body.classList.add('menu-open');updateCartUI();syncCartFab();}
+function closeCart(){document.getElementById('cartDrawer').classList.remove('open');document.getElementById('cartBackdrop').classList.remove('open');document.body.classList.remove('menu-open');syncCartFab();}
 function checkoutInquiry(){
   const c=loadCart();
   if(!c.length){toast('장바구니에 상품을 담아 주세요');return;}
@@ -1895,6 +1926,13 @@ function shopCardHtml(s){
   const thumbCls=s.thumbClass?' '+s.thumbClass:'';
   return`<article class="shop-card"><div class="shop-thumb${thumbCls}" onclick="shopOpenItem('${s.id}')"><img src="${s.img}" alt="${s.name}">${badge}</div><div class="shop-body"><div class="shop-cat">${s.catLabel}</div><h3 onclick="shopOpenItem('${s.id}')">${s.name}</h3><p>${s.short}</p>${shopPriceHtml(s)}<div class="shop-actions"><button type="button" class="btn btn-primary" onclick="event.stopPropagation();addToCart('${s.id}')">담기</button><button type="button" class="btn btn-ghost" onclick="event.stopPropagation();shopOpenItem('${s.id}')">상세</button></div></div></article>`;
 }
+function renderShopBest(){
+  const el=document.getElementById('shopBestHome'),block=document.getElementById('shopBestBlock');
+  if(!el||!block)return;
+  if(shopFilt!=='all'){block.style.display='none';return;}
+  block.style.display='';
+  el.innerHTML=SHOP_BEST_IDS.map(id=>{const s=getShopItem(id);return s?shopCardHtml(s):'';}).join('');
+}
 function renderShopGrid(gridId,countId,titleId){
   const list=shopFilt==='all'?SHOP_ITEMS:SHOP_ITEMS.filter(s=>s.cat===shopFilt);
   const grid=document.getElementById(gridId);
@@ -1903,6 +1941,7 @@ function renderShopGrid(gridId,countId,titleId){
   if(cnt)cnt.textContent=list.length+'개 상품';
   const title=document.getElementById(titleId);
   if(title)title.textContent=shopFilt==='all'?'전체 상품':(SHOP_CAT_LABELS[shopFilt]||'전체 상품');
+  if(gridId==='shopGridHome')renderShopBest();
 }
 function renderShopCats(sideId,chipsId){
   const mkBtn=(cat,cls)=>`<button type="button" class="${cls}${shopFilt===cat?' active':''}" onclick="shopFilter('${cat}')">${SHOP_CAT_LABELS[cat]}</button>`;
@@ -1920,7 +1959,7 @@ function shopFilter(cat){
   const main=document.getElementById('shopMain');
   if(main&&document.getElementById('page-home').classList.contains('active'))main.scrollIntoView({behavior:'smooth',block:'start'});
 }
-function initShop(){renderShopCats(null,'shopChipsHome');renderShopCats('shopCatsProducts','shopChipsProducts');shopFilter(shopFilt);updateCartUI();}
+function initShop(){renderShopCats(null,'shopChipsHome');renderShopCats('shopCatsProducts','shopChipsProducts');shopFilter(shopFilt);updateCartUI();syncCartFab();}
 function ironCardHtml(p,i){
   const cls=i.featured?'iron-card featured':'iron-card';
   const price=i.price?`<div class="ic-price">₩ ${i.price} ${i.priceOrig?`<span style="color:var(--muted);font-size:11px;text-decoration:line-through;margin-left:6px;">₩${i.priceOrig}</span>`:''}</div>`:'';
@@ -2017,6 +2056,7 @@ function showPage(id){
   document.body.classList.toggle('magnificat-theme',isM&&!isT);
   window.scrollTo(0,0);
   initReveal();
+  syncCartFab();
 }
 function renderProducts(){
   const list=filt==='all'?products:products.filter(p=>p.cat===filt);
