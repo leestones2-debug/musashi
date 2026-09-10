@@ -595,30 +595,59 @@ body:not(.trinity-theme):not(.magnificat-theme){--light:#F4F1EA;--light-text:#1A
 .mk-light .sec-label{color:var(--gold-dim);}
 .mk-light h2{color:var(--light-text);}
 .mk-light p{color:var(--light-muted);}
-.mk-values{padding:clamp(36px,5vw,52px) 0;border-bottom:1px solid rgba(0,0,0,.06);}
-.mk-values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
-.mk-val-icon{font-size:28px;margin-bottom:12px;opacity:.85;}
-.mk-val-item h4{font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:var(--light-text);margin-bottom:8px;font-weight:600;}
-.mk-val-item p{font-size:13px;line-height:1.75;color:var(--light-muted);}
-.mk-products-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:36px;}
-.mk-products-head h2{margin:0;}
-.mk-products-link{font-family:'IBM Plex Mono';font-size:12px;color:var(--gold-dim);cursor:pointer;border:none;background:none;padding:0;font-weight:600;}
+.mk-values{padding:clamp(40px,5vw,56px) 0;border-bottom:1px solid rgba(26,21,16,.06);}
+.mk-values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center;}
+.mk-val-item{padding:8px clamp(12px,2vw,24px);border-right:1px solid rgba(26,21,16,.08);}
+.mk-val-item:last-child{border-right:none;}
+.mk-val-icon{width:52px;height:52px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(212,175,55,.1);font-size:22px;line-height:1;}
+.mk-val-item h4{font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.16em;color:var(--light-text);margin-bottom:8px;font-weight:600;}
+.mk-val-item p{font-size:13px;line-height:1.75;color:var(--light-muted);max-width:220px;margin:0 auto;}
+.mk-products-head-center{text-align:center;max-width:680px;margin:0 auto 44px;}
+.mk-products-head-center h2{font-size:clamp(26px,3.8vw,38px);letter-spacing:-0.02em;margin-top:8px;}
+.mk-products-head-center p{color:var(--light-muted);margin-top:12px;font-size:15px;line-height:1.75;}
+.mk-products-link{font-family:'IBM Plex Mono';font-size:12px;color:var(--gold-dim);cursor:pointer;border:none;background:none;padding:0;font-weight:600;display:inline-block;margin-top:18px;letter-spacing:.04em;}
 .mk-products-link:hover{color:var(--gold);}
-.mk-prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-.mk-prod-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:4px;overflow:hidden;cursor:pointer;transition:.35s;box-shadow:0 8px 28px rgba(0,0,0,.06);}
-.mk-prod-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.12);}
-.mk-prod-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#111;}
-.mk-prod-card.mk-iron img{object-fit:contain;background:#ece8e0;padding:12px;}
-.mk-prod-body{padding:20px 22px 24px;}
-.mk-prod-en{font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.2em;color:var(--gold-dim);margin-bottom:6px;}
-.mk-prod-body h3{font-size:18px;color:var(--light-text);margin-bottom:8px;}
-.mk-prod-body p{font-size:13px;line-height:1.7;margin-bottom:16px;}
-.mk-prod-more{font-family:'IBM Plex Mono';font-size:11px;color:var(--light-text);font-weight:600;}
-.mk-prod-price{font-family:'Sora',sans-serif;font-size:17px;font-weight:700;color:#8B6914;margin:10px 0 12px;}
-.mk-prod-price.inquiry{font-size:14px;font-weight:600;color:var(--light-muted);}
-.mk-prod-actions{display:flex;gap:8px;margin-top:4px;}
-.mk-prod-actions .btn{flex:1;padding:10px 8px;font-size:11px;min-height:38px;}
-.mk-shop-block{background:var(--light);padding:clamp(48px,6vw,72px) 0 var(--section-y);}
+.mk-prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.mk-prod-card{position:relative;min-height:400px;border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s;border:none;background:#111;box-shadow:0 16px 48px rgba(26,21,16,.12);}
+.mk-prod-card:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(26,21,16,.2);}
+.mk-prod-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.16,1,.3,1);}
+.mk-prod-card:hover>img{transform:scale(1.06);}
+.mk-prod-card.mk-prod-light>img{object-fit:contain;background:#E8E4DC;padding:18px;}
+.mk-prod-card::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.42) 52%,rgba(0,0,0,.1) 100%);pointer-events:none;}
+.mk-prod-card.mk-prod-light::after{background:linear-gradient(0deg,rgba(244,241,234,.96) 0%,rgba(244,241,234,.58) 48%,rgba(244,241,234,.12) 100%);}
+.mk-prod-body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:24px 22px 22px;text-align:left;}
+.mk-prod-en{font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.22em;color:var(--gold-light);margin-bottom:8px;}
+.mk-prod-card.mk-prod-light .mk-prod-en{color:var(--gold-dim);}
+.mk-prod-body h3{font-size:19px;margin-bottom:8px;line-height:1.3;}
+.mk-prod-card:not(.mk-prod-light) .mk-prod-body h3{color:#fff;}
+.mk-prod-card.mk-prod-light .mk-prod-body h3{color:var(--light-text);}
+.mk-prod-body p{font-size:13px;line-height:1.7;margin-bottom:0;}
+.mk-prod-card:not(.mk-prod-light) .mk-prod-body p{color:rgba(255,255,255,.78);}
+.mk-prod-card.mk-prod-light .mk-prod-body p{color:var(--light-muted);}
+.mk-prod-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-top:16px;flex-wrap:wrap;}
+.mk-prod-price{font-family:'Sora',sans-serif;font-size:17px;font-weight:700;color:var(--gold-light);margin:0;}
+.mk-prod-card.mk-prod-light .mk-prod-price{color:#8B6914;}
+.mk-prod-price.inquiry{font-size:14px;font-weight:600;color:rgba(255,255,255,.72);}
+.mk-prod-card.mk-prod-light .mk-prod-price.inquiry{color:var(--light-muted);}
+.mk-prod-actions{display:flex;gap:8px;}
+.mk-prod-actions .btn{padding:10px 14px;font-size:11px;min-height:38px;flex:0 0 auto;}
+.mk-prod-actions .btn-ghost{border-color:rgba(255,255,255,.35);color:#fff;background:rgba(255,255,255,.06);}
+.mk-prod-card.mk-prod-light .mk-prod-actions .btn-ghost{border-color:rgba(0,0,0,.14);color:var(--light-text);background:transparent;}
+.mk-shop-block{background:linear-gradient(180deg,#F4F1EA 0%,#EBE6DC 100%);padding:clamp(56px,7vw,88px) 0 var(--section-y);}
+.mk-shop-block .shop-toolbar{flex-direction:column;align-items:center;text-align:center;margin-bottom:28px;}
+.mk-shop-block .shop-toolbar h2{font-size:clamp(26px,3.6vw,36px);letter-spacing:-0.02em;}
+.mk-shop-block .shop-chips{justify-content:center;}
+.mk-shop-block .shop-grid{grid-template-columns:repeat(4,1fr);gap:20px;}
+.mk-shop-block .shop-card{border-radius:12px;border:1px solid rgba(26,21,16,.07);box-shadow:0 10px 36px rgba(26,21,16,.08);background:#fff;}
+.mk-shop-block .shop-card:hover{box-shadow:0 18px 48px rgba(26,21,16,.14);border-color:rgba(184,150,46,.35);}
+.mk-shop-block .shop-body h3{color:var(--light-text);}
+.mk-shop-block .shop-body p{color:var(--light-muted);}
+.mk-shop-block .shop-price{color:#8B6914;}
+.mk-shop-block .shop-price.inquiry{color:var(--light-muted);}
+.mk-shop-block .shop-actions .btn-primary{background:var(--gold);color:#1A1510;border-color:var(--gold);}
+.mk-shop-block .shop-actions .btn-ghost{border-color:rgba(26,21,16,.12);color:var(--light-text);}
+.mk-shop-block .shop-badge.patent{background:#1A1510;color:var(--gold-light);}
+.pad-sm{padding:clamp(48px,6vw,72px) 0;}
 .mk-shop-block h2{color:var(--light-text);}
 .mk-shop-block .shop-chip{border-color:rgba(0,0,0,.12);background:#fff;color:var(--light-muted);}
 .mk-shop-block .shop-chip.active,.mk-shop-block .shop-chip:hover{border-color:var(--gold-dim);color:#8B6914;background:rgba(212,175,55,.08);}
@@ -626,37 +655,48 @@ body:not(.trinity-theme):not(.magnificat-theme){--light:#F4F1EA;--light-text:#1A
 .mk-shop-block .shop-body h3{color:var(--light-text);}
 .mk-shop-block .shop-body p{color:var(--light-muted);}
 .mk-shop-block .shop-count{color:var(--light-muted);}
-.mk-story{position:relative;min-height:clamp(360px,50vw,520px);display:flex;align-items:center;background-size:cover;background-position:center;}
-.mk-story::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.35));}
-.mk-story-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:var(--section-y) 0;}
-.mk-story-copy h2{color:#fff;text-align:left;font-size:clamp(28px,4vw,42px);}
-.mk-story-copy p{color:rgba(255,255,255,.78);line-height:1.85;margin-top:16px;font-size:15px;}
+.mk-story{position:relative;min-height:clamp(420px,52vw,580px);display:flex;align-items:center;background-size:cover;background-position:center;}
+.mk-story::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 55%,rgba(0,0,0,.35) 100%);}
+.mk-story-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 0.85fr 0.95fr;gap:clamp(24px,4vw,40px);align-items:center;padding:var(--section-y) 0;}
+.mk-story-copy h2{color:#fff;text-align:left;font-size:clamp(28px,4vw,42px);line-height:1.25;}
+.mk-story-copy p{color:rgba(255,255,255,.78);line-height:1.85;margin-top:16px;font-size:15px;max-width:480px;}
+.mk-story-link{font-family:'IBM Plex Mono';font-size:12px;color:var(--gold-light);background:none;border:none;cursor:pointer;margin-top:22px;padding:0;font-weight:600;letter-spacing:.04em;}
+.mk-story-link:hover{color:#fff;}
 .mk-story-menu{list-style:none;display:flex;flex-direction:column;gap:0;}
-.mk-story-menu li{display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:14px;cursor:pointer;transition:.2s;}
+.mk-story-menu li{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:14px;cursor:pointer;transition:.2s;}
 .mk-story-menu li:hover{color:var(--gold-light);padding-left:6px;}
 .mk-story-menu li span:first-child{font-size:18px;width:28px;text-align:center;opacity:.9;}
-.mk-craft{width:100%;aspect-ratio:21/7;min-height:200px;background-size:cover;background-position:center;position:relative;}
-.mk-craft::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.25);}
-.mk-feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;}
-.mk-feat-tile{position:relative;border-radius:6px;overflow:hidden;min-height:220px;cursor:pointer;border:none;padding:0;text-align:left;background:#111;}
-.mk-feat-tile img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s;}
-.mk-feat-tile:hover img{transform:scale(1.05);}
-.mk-feat-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.82),rgba(0,0,0,.15));}
-.mk-feat-cap{position:absolute;left:0;right:0;bottom:0;padding:22px 20px;z-index:1;}
+.mk-story-visual img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 60px rgba(0,0,0,.45);}
+.mk-feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.mk-feat-tile{position:relative;border-radius:10px;overflow:hidden;min-height:240px;cursor:pointer;border:none;padding:0;text-align:left;background:#111;box-shadow:0 12px 36px rgba(26,21,16,.12);transition:transform .35s,box-shadow .35s;}
+.mk-feat-tile:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(26,21,16,.18);}
+.mk-feat-tile img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .55s cubic-bezier(.16,1,.3,1);}
+.mk-feat-tile:hover img{transform:scale(1.06);}
+.mk-feat-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.2) 60%,rgba(0,0,0,.05) 100%);}
+.mk-feat-cap{position:absolute;left:0;right:0;bottom:0;padding:22px 20px;z-index:1;text-align:left;}
 .mk-feat-cap .en{font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.18em;color:var(--gold-light);}
 .mk-feat-cap h4{color:#fff;font-size:16px;margin-top:6px;}
-.mk-fitting{background:#111;color:#fff;padding:var(--section-y) 0;}
-.mk-fitting-head{text-align:center;max-width:640px;margin:0 auto 48px;}
-.mk-fitting-head h2{color:#fff;}
-.mk-fitting-head p{color:rgba(255,255,255,.65);margin-top:14px;line-height:1.85;}
-.mk-fit-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-.mk-fit-step{text-align:center;padding:28px 20px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.03);}
-.mk-fit-num{font-family:'Playfair Display',serif;font-size:36px;color:var(--gold);line-height:1;margin-bottom:14px;}
-.mk-fit-step h4{font-size:15px;color:#fff;margin-bottom:10px;}
-.mk-fit-step p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.75;}
+.mk-feat-cap p{color:rgba(255,255,255,.65);font-size:12px;line-height:1.65;margin-top:8px;}
+.mk-fitting{position:relative;background:#0A0A0A;color:#fff;padding:var(--section-y) 0;overflow:hidden;}
+.mk-fitting-bg{position:absolute;inset:0;background:url('assets/nigodemo/jehovah-nissi-studio.jpg') center/cover no-repeat;opacity:.22;}
+.mk-fitting-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.65));}
+.mk-fitting .wrap{position:relative;z-index:2;}
+.mk-fitting-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(32px,5vw,56px);align-items:center;}
+.mk-fitting-head{text-align:left;max-width:420px;margin:0;}
+.mk-fitting-head h2{color:#fff;font-size:clamp(28px,3.6vw,40px);}
+.mk-fitting-head p{color:rgba(255,255,255,.65);margin-top:14px;line-height:1.85;font-size:15px;}
+.mk-fit-steps{display:flex;align-items:stretch;gap:8px;}
+.mk-fit-step{flex:1;text-align:center;padding:24px 14px;border:1px solid rgba(255,255,255,.1);border-radius:10px;background:rgba(255,255,255,.04);backdrop-filter:blur(4px);}
+.mk-fit-arrow{align-self:center;color:rgba(212,175,55,.45);font-size:18px;flex-shrink:0;padding:0 2px;}
+.mk-fit-num{font-family:'Playfair Display',serif;font-size:32px;color:var(--gold);line-height:1;margin-bottom:12px;}
+.mk-fit-step h4{font-size:14px;color:#fff;margin-bottom:8px;}
+.mk-fit-step p{font-size:12px;color:rgba(255,255,255,.58);line-height:1.7;}
+.mk-light .band-cta-banner{background:#fff;border:1px solid rgba(26,21,16,.08);box-shadow:0 14px 44px rgba(26,21,16,.08);}
+.mk-light .band-cta-banner h3{color:var(--light-text);}
+.mk-light .band-cta-banner p{color:var(--light-muted);}
 .mk-home-sub{padding:var(--section-y) 0;}
-@media(max-width:1024px){.mk-prod-grid,.mk-feature-grid,.mk-fit-steps{grid-template-columns:repeat(2,1fr);}.mk-values-grid{grid-template-columns:repeat(2,1fr);}.mk-story-inner{grid-template-columns:1fr;}.nav-util{display:none;}}
-@media(max-width:640px){.mk-prod-grid,.mk-feature-grid,.mk-fit-steps,.mk-values-grid{grid-template-columns:1fr;}.mk-hero h1{font-size:30px;}.mk-scroll-side{display:none;}.mk-hero-arrows{display:none;}}
+@media(max-width:1024px){.mk-prod-grid,.mk-feature-grid{grid-template-columns:repeat(2,1fr);}.mk-shop-block .shop-grid{grid-template-columns:repeat(2,1fr);}.mk-values-grid{grid-template-columns:repeat(2,1fr);}.mk-val-item:nth-child(2){border-right:none;}.mk-story-inner{grid-template-columns:1fr;}.mk-story-visual{max-width:320px;margin:0 auto;}.mk-fitting-layout{grid-template-columns:1fr;}.mk-fit-steps{flex-wrap:wrap;}.mk-fit-arrow{display:none;}.mk-fit-step{min-width:calc(50% - 8px);}.nav-util{display:none;}}
+@media(max-width:640px){.mk-prod-grid,.mk-feature-grid,.mk-values-grid,.mk-shop-block .shop-grid{grid-template-columns:1fr;}.mk-val-item{border-right:none;border-bottom:1px solid rgba(26,21,16,.08);padding:16px 0;}.mk-val-item:last-child{border-bottom:none;}.mk-prod-card{min-height:340px;}.mk-hero h1{font-size:30px;}.mk-scroll-side{display:none;}.mk-hero-arrows{display:none;}.mk-fit-step{min-width:100%;}}
 /* —— Shop mall —— */
 .shop-trust{background:var(--surface);border-bottom:1px solid var(--glass-bd);padding:14px 0;}
 .shop-trust-inner{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 24px;font-size:12px;color:var(--muted);}
@@ -896,7 +936,7 @@ body:not(.trinity-theme):not(.magnificat-theme){--light:#F4F1EA;--light-text:#1A
     <div class="mk-hero-inner">
       <p class="mk-hero-kicker" id="mkHeroKicker">JAPANESE CRAFTSMANSHIP · SINCE 1956</p>
       <h1 id="mkHeroTitle">MUSASHI 634<br>PRECISION FORGED GOLF CLUB</h1>
-      <p class="mk-hero-lead" id="mkHeroLead">일본 장인의 혼이 담긴 프리미엄 골프클럽. 모세의 기적 드라이버 · CPS 그래핀 7아이언 · 장바구니 후 구매 문의.</p>
+      <p class="mk-hero-lead" id="mkHeroLead">정밀한 설계와 장인정신으로 완성한 프리미엄 골프클럽.<br>니고데모 · CPS 그래핀 · Magnificat 공식몰.</p>
       <div class="mk-hero-btns">
         <button class="btn btn-primary" onclick="homeScroll('shopMain')">제품 보기 →</button>
         <button class="btn btn-ghost" style="border-color:rgba(255,255,255,.35);color:#fff;" onclick="navGo('nigodemo')">브랜드 스토리 →</button>
@@ -915,51 +955,84 @@ body:not(.trinity-theme):not(.magnificat-theme){--light:#F4F1EA;--light-text:#1A
   </div></section>
 
   <section class="mk-light pad" id="home-products"><div class="wrap reveal">
-    <div class="mk-products-head">
-      <div><div class="sec-label">Products</div><h2>제품소개</h2><p style="margin-top:10px;">카테고리별 대표 라인 · 클릭 또는 장바구니 담기</p></div>
+    <div class="mk-products-head-center">
+      <div class="sec-label">Our Products</div>
+      <h2>무사시 634의 주요 제품을 만나보세요</h2>
+      <p>드라이버 · 아이언 · 웨지 · 퍼터 — 카테고리별 대표 라인</p>
       <button class="mk-products-link" onclick="homeScroll('shopMain')">전체 상품 보기 →</button>
     </div>
     <div class="mk-prod-grid">
       <article class="mk-prod-card" onclick="navGo('nigodemo')">
-        <img src="assets/nigodemo/jehovah-nissi-studio.jpg" alt="드라이버">
-        <div class="mk-prod-body"><div class="mk-prod-en">DRIVER</div><h3>드라이버</h3><p>THE MIRACLE OF MOSES · 495cc · 250~260g</p><div class="mk-prod-price inquiry">가격 문의</div><div class="mk-prod-actions"><button type="button" class="btn btn-primary btn-sm" onclick="event.stopPropagation();addToCart('moses-driver')">담기</button><button type="button" class="btn btn-ghost btn-sm" style="border-color:rgba(0,0,0,.15);color:var(--light-text);" onclick="event.stopPropagation();navGo('nigodemo')">상세</button></div></div>
+        <img src="assets/nigodemo/jehovah-nissi-luxury.jpg" alt="드라이버">
+        <div class="mk-prod-body"><div class="mk-prod-en">DRIVER</div><h3>드라이버</h3><p>THE MIRACLE OF MOSES · 495cc · 250~260g</p><div class="mk-prod-foot"><div class="mk-prod-price inquiry">가격 문의</div><div class="mk-prod-actions"><button type="button" class="btn btn-primary btn-sm" onclick="event.stopPropagation();addToCart('moses-driver')">담기</button><button type="button" class="btn btn-ghost btn-sm" onclick="event.stopPropagation();navGo('nigodemo')">상세</button></div></div></div>
       </article>
-      <article class="mk-prod-card mk-iron" onclick="navGoIron('musashi-634','cps-graphene-7i')">
+      <article class="mk-prod-card mk-prod-light" onclick="navGoIron('musashi-634','cps-graphene-7i')">
         <img src="assets/irons/cps-graphene/hero.jpg" alt="CPS 그래핀 7아이언">
-        <div class="mk-prod-body"><div class="mk-prod-en">IRON</div><h3>아이언</h3><p>CPS 그래핀 7아이언 · #5~SW · 특허</p><div class="mk-prod-price">₩ 1,890,000</div><div class="mk-prod-actions"><button type="button" class="btn btn-primary btn-sm" onclick="event.stopPropagation();addToCart('cps-iron')">담기</button><button type="button" class="btn btn-ghost btn-sm" style="border-color:rgba(0,0,0,.15);color:var(--light-text);" onclick="event.stopPropagation();navGoIron('musashi-634','cps-graphene-7i')">상세</button></div></div>
+        <div class="mk-prod-body"><div class="mk-prod-en">IRON</div><h3>아이언</h3><p>CPS 그래핀 7아이언 · #5~SW · 특허</p><div class="mk-prod-foot"><div class="mk-prod-price">₩ 1,890,000</div><div class="mk-prod-actions"><button type="button" class="btn btn-primary btn-sm" onclick="event.stopPropagation();addToCart('cps-iron')">담기</button><button type="button" class="btn btn-ghost btn-sm" onclick="event.stopPropagation();navGoIron('musashi-634','cps-graphene-7i')">상세</button></div></div></div>
       </article>
       <article class="mk-prod-card" onclick="navGoProduct('nicodemus')">
         <img src="assets/nigodemo/jehovah-nissi-course.jpg" alt="웨지">
-        <div class="mk-prod-body"><div class="mk-prod-en">WEDGE</div><h3>웨지</h3><p>NICODEMUS 단조 웨지 48°~60°</p><div class="mk-prod-price inquiry">가격 문의</div><div class="mk-prod-actions"><button type="button" class="btn btn-primary btn-sm" onclick="event.stopPropagation();addToCart('nicodemus-wedge')">담기</button><button type="button" class="btn btn-ghost btn-sm" style="border-color:rgba(0,0,0,.15);color:var(--light-text);" onclick="event.stopPropagation();navGoProduct('nicodemus')">상세</button></div></div>
+        <div class="mk-prod-body"><div class="mk-prod-en">WEDGE</div><h3>웨지</h3><p>NICODEMUS 단조 웨지 48°~60°</p><div class="mk-prod-foot"><div class="mk-prod-price inquiry">가격 문의</div><div class="mk-prod-actions"><button type="button" class="btn btn-primary btn-sm" onclick="event.stopPropagation();addToCart('nicodemus-wedge')">담기</button><button type="button" class="btn btn-ghost btn-sm" onclick="event.stopPropagation();navGoProduct('nicodemus')">상세</button></div></div></div>
       </article>
       <article class="mk-prod-card" onclick="navGoProduct('mla')">
         <img src="assets/series-showcase.jpg" alt="퍼터">
-        <div class="mk-prod-body"><div class="mk-prod-en">PUTTER</div><h3>퍼터</h3><p>MLA 퍼터 · 말렛/블레이드</p><div class="mk-prod-price inquiry">가격 문의</div><div class="mk-prod-actions"><button type="button" class="btn btn-primary btn-sm" onclick="event.stopPropagation();addToCart('mla-putter')">담기</button><button type="button" class="btn btn-ghost btn-sm" style="border-color:rgba(0,0,0,.15);color:var(--light-text);" onclick="event.stopPropagation();navGoProduct('mla')">상세</button></div></div>
+        <div class="mk-prod-body"><div class="mk-prod-en">PUTTER</div><h3>퍼터</h3><p>MLA 퍼터 · 말렛/블레이드</p><div class="mk-prod-foot"><div class="mk-prod-price inquiry">가격 문의</div><div class="mk-prod-actions"><button type="button" class="btn btn-primary btn-sm" onclick="event.stopPropagation();addToCart('mla-putter')">담기</button><button type="button" class="btn btn-ghost btn-sm" onclick="event.stopPropagation();navGoProduct('mla')">상세</button></div></div></div>
       </article>
+    </div>
+  </div></section>
+
+  <section class="mk-story" style="background-image:url('assets/series-showcase.jpg')"><div class="wrap">
+    <div class="mk-story-inner reveal">
+      <div class="mk-story-copy">
+        <div class="sec-label" style="color:var(--gold-light);">Brand Story</div>
+        <h2>무사시 634,<br>그 이름에 담긴 의미</h2>
+        <p>1956년 일본에서 시작된 장인 정신. 단조·특허·피팅이 하나로 이어지는 프리미엄 골프클럽 브랜드 — JEHOVAH NISSI, NICODEMUS, CPS Graphene.</p>
+        <button type="button" class="mk-story-link" onclick="navGo('nigodemo')">스토리 더보기 →</button>
+      </div>
+      <ul class="mk-story-menu">
+        <li onclick="navGo('nigodemo')"><span>⛩</span> Meaning · 브랜드 의미</li>
+        <li onclick="navGo('nigodemo')"><span>📜</span> History · 1956년부터</li>
+        <li onclick="navGoIron('musashi-634','cps-graphene-7i')"><span>⚒</span> Technology · 특허 기술</li>
+        <li onclick="homeScroll('home-fitting')"><span>📐</span> Fitting · 맞춤 피팅</li>
+      </ul>
+      <div class="mk-story-visual"><img src="assets/nigodemo/jehovah-nissi-studio.jpg" alt="무사시 장인 정신"></div>
+    </div>
+  </div></section>
+
+  <section class="mk-light pad-sm"><div class="wrap">
+    <div class="mk-feature-grid reveal">
+      <button type="button" class="mk-feat-tile" onclick="navGoIron('musashi-634','cps-graphene-7i')"><img src="assets/irons/cps-graphene/detail-1.jpg" alt=""><div class="mk-feat-cap"><div class="en">Technology</div><h4>기술력</h4><p>CPS 그래핀 · 특허 단조</p></div></button>
+      <button type="button" class="mk-feat-tile" onclick="homeScroll('home-fitting')"><img src="assets/nigodemo/jehovah-nissi-studio.jpg" alt=""><div class="mk-feat-cap"><div class="en">Fitting Service</div><h4>피팅 서비스</h4><p>데이터 기반 맞춤 상담</p></div></button>
+      <button type="button" class="mk-feat-tile" onclick="navGo('nigodemo')"><img src="assets/nigodemo/jehovah-nissi-course.jpg" alt=""><div class="mk-feat-cap"><div class="en">Why Musashi</div><h4>선택하는 이유</h4><p>니고데모 · 10시리즈</p></div></button>
+      <button type="button" class="mk-feat-tile" onclick="navGo('nigodemo')"><img src="assets/nigodemo/jehovah-nissi-luxury.jpg" alt=""><div class="mk-feat-cap"><div class="en">Gallery</div><h4>갤러리</h4><p>제품 · 필드 · 스튜디오</p></div></button>
     </div>
   </div></section>
 
   <section class="mk-shop-block" id="shopMain"><div class="wrap">
     <div class="shop-toolbar reveal">
-      <div><div class="sec-label">Shop</div><h2 id="shopTitleHome">인기 상품</h2><p style="margin-top:8px;font-size:14px;color:var(--light-muted);">참고가 · VAT 포함 · 장바구니 후 구매 문의</p></div>
-      <span class="shop-count" id="shopCountHome"></span>
+      <div><div class="sec-label">Shop</div><h2 id="shopTitleHome">인기 상품</h2><p style="margin-top:10px;font-size:14px;color:var(--light-muted);">참고가 · VAT 포함 · 장바구니 후 구매 문의</p><span class="shop-count" id="shopCountHome" style="display:block;margin-top:8px;"></span></div>
     </div>
     <div class="shop-chips reveal" id="shopChipsHome"></div>
     <div class="shop-grid reveal" id="shopGridHome"></div>
   </div></section>
 
-  <section class="mk-fitting" id="home-fitting"><div class="wrap">
-    <div class="mk-fitting-head reveal">
-      <div class="sec-label" style="color:var(--gold-light);">Fitting</div>
-      <h2>MUSASHI 634 FITTING</h2>
-      <p>정확한 데이터로 가장 잘 맞는 클럽을 — 드라이버 · CPS 아이언 · 웨지 스펙·강도·길이 맞춤 상담</p>
-      <button class="btn btn-primary" style="margin-top:24px;" onclick="productInquiry()">피팅 상담 신청 →</button>
-    </div>
-    <div class="mk-fit-steps reveal">
-      <div class="mk-fit-step"><div class="mk-fit-num">01</div><h4>상담</h4><p>현재 클럽·스윙 특성·목표 확인</p></div>
-      <div class="mk-fit-step"><div class="mk-fit-num">02</div><h4>측정</h4><p>헤드스피드·런치·스핀 데이터</p></div>
-      <div class="mk-fit-step"><div class="mk-fit-num">03</div><h4>분석</h4><p>드라이버·아이언·웨지 조합 제안</p></div>
-      <div class="mk-fit-step"><div class="mk-fit-num">04</div><h4>맞춤</h4><p>강도·길이·로프트 맞춤 안내</p></div>
+  <section class="mk-fitting" id="home-fitting"><div class="mk-fitting-bg" aria-hidden="true"></div><div class="wrap">
+    <div class="mk-fitting-layout reveal">
+      <div class="mk-fitting-head">
+        <div class="sec-label" style="color:var(--gold-light);">Fitting</div>
+        <h2>MUSASHI 634 FITTING</h2>
+        <p>정확한 데이터로 가장 잘 맞는 클럽을 — 드라이버 · CPS 아이언 · 웨지 스펙·강도·길이 맞춤 상담</p>
+        <button class="btn btn-primary" style="margin-top:24px;" onclick="productInquiry()">피팅 상담 신청 →</button>
+      </div>
+      <div class="mk-fit-steps">
+        <div class="mk-fit-step"><div class="mk-fit-num">01</div><h4>상담</h4><p>스윙·목표 확인</p></div>
+        <span class="mk-fit-arrow">→</span>
+        <div class="mk-fit-step"><div class="mk-fit-num">02</div><h4>측정</h4><p>스피드·스핀 데이터</p></div>
+        <span class="mk-fit-arrow">→</span>
+        <div class="mk-fit-step"><div class="mk-fit-num">03</div><h4>분석</h4><p>클럽 조합 제안</p></div>
+        <span class="mk-fit-arrow">→</span>
+        <div class="mk-fit-step"><div class="mk-fit-num">04</div><h4>맞춤</h4><p>스펙·강도 안내</p></div>
+      </div>
     </div>
   </div></section>
 
